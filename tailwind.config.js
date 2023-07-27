@@ -32,6 +32,10 @@ module.exports = {
           "Helvetica Neue",
           "Ubuntu",
           "sans-serif",
+          "Suite",
+          "Poppins",
+          "Noto Sans",
+          
         ],
       },
     },
