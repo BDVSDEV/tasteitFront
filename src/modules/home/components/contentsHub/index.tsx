@@ -83,7 +83,7 @@ const Contents = () => {
 
   
       <div className=" px-4 text-xl font-semibold mt-[86px] mb-3">
-      그냥 신맛이 아니라 감귤 맛
+      이번 시즌에 만 만나볼 수 있는 원두
       </div>
       <div className="h-[360px] w-360px relative my-6">
         <div className="text-white absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:text-left small:justify-end small:items-start small:p-32">
