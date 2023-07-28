@@ -9,16 +9,16 @@ const FeaturedProducts = () => {
 
   return (
     <div className="pt-12 pb-6">
-      <div className="py-10">
+      <div className="py-6">
         <div className="flex flex-wrap items-center">
-          <div className="flex justify-start text-xl font-Suite text-black-600 mb-6 font-semibold leading-normal px-8">
+          <div className="flex justify-start text-xl font-Suite text-black-600 mb-6 font-semibold leading-normal px-6">
             재구매율이 많은 원두
           </div>
 
           {/* <UnderlineLink href="/store">Explore products</UnderlineLink> */}
         </div>
         <div>
-          <div className="flex h-[56px] items-center px-8 py-8">
+          <div className="flex h-[56px] items-center px-6 py-8">
             <img
               src="/home_roast1.png"
               alt=""
@@ -40,7 +40,7 @@ const FeaturedProducts = () => {
           <div className="flex justify-end py-6">
             <img src="/line.png" alt="line" />
           </div>
-          <div className="flex h-[56px] items-center px-8 py-8">
+          <div className="flex h-[56px] items-center px-6 py-8">
             <img
               src="/home_roast2.png"
               alt=""
@@ -62,7 +62,7 @@ const FeaturedProducts = () => {
           <div className="flex justify-end py-6">
             <img src="/line.png" alt="line" />
           </div>
-          <div className="flex h-[56px] items-center px-8">
+          <div className="flex h-[56px] items-center px-6">
             <img
               src="/home_roast1.png"
               alt=""

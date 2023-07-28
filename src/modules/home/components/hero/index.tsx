@@ -27,7 +27,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="sm:h-[360px] h-[90vh] w-360px relative">
+    <div className="h-[360px] w-360px relative">
       <div className="text-white absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:text-left small:justify-end small:items-start small:p-32">
         
         
