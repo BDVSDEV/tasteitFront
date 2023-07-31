@@ -9,11 +9,11 @@ const FooterNav = () => {
   return (
     <div className="content-container flex flex-col gap-y-8 pt-16 pb-8">
       <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between">
-        <div>
+        {/* <div>
           <Link href="/" className="text-xl-semi uppercase">
           Tasteit
           </Link>
-        </div>
+        </div> */}
         {/* <div className="text-small-regular grid grid-cols-2 gap-x-16">
           <div className="flex flex-col gap-y-2">
             <span className="text-base-semi">Collections</span>
@@ -67,9 +67,10 @@ const FooterNav = () => {
         <span className="text-xsmall-regular text-gray-500">
           © Copyright 2023 Tasteit
         </span>
-        <div className="min-w-[316px] flex xsmall:justify-end">
+        {/* <div className="min-w-[316px] flex xsmall:justify-end">
           <CountrySelect />
-        </div>
+        </div> */}
+        {/* TODO:fix */}
       </div>
     </div>
   )
