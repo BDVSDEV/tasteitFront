@@ -12,7 +12,7 @@ const MedusaCTA = () => {
 
 const PoweredBy = () => {
   return (
-   <div>Powered by Alex</div>
+   <div>Powered by Alex and 기하</div>
   )
 }
 
