@@ -1,48 +1,73 @@
-import { useMobileMenu } from "@lib/context/mobile-menu-context"
-import Hamburger from "@modules/common/components/hamburger"
-import CartDropdown from "@modules/layout/components/cart-dropdown"
-import DropdownMenu from "@modules/layout/components/dropdown-menu"
-import MobileMenu from "@modules/mobile-menu/templates"
-import DesktopSearchModal from "@modules/search/templates/desktop-search-modal"
-import clsx from "clsx"
-import Link from "next/link"
-import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
+import { useMobileMenu } from "@lib/context/mobile-menu-context";
+import Hamburger from "@modules/common/components/hamburger";
+import CartDropdown from "@modules/layout/components/cart-dropdown";
+import DropdownMenu from "@modules/layout/components/dropdown-menu";
+import MobileMenu from "@modules/mobile-menu/templates";
+import DesktopSearchModal from "@modules/search/templates/desktop-search-modal";
+import clsx from "clsx";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+
+// Custom hook
+// Custom hook
+function useNavigationLink(path:string, label:string) {
+  const { pathname } = useRouter();
+  const isActive = pathname === path;
+
+  return (
+    <Link href={path}>
+      <div className="relative w-[80px] text-center group">
+        {label}
+        <div 
+          className={clsx(
+            "absolute left-0 bottom-[-13px] h-[4px] bg-black transform transition-all ease-in-out duration-200", 
+            {
+              "w-[80px]": isActive,
+              "w-0": !isActive
+            }
+          )}
+        ></div>
+      </div>
+    </Link>
+  );
+}
+
 
 const Nav = () => {
-  const { pathname } = useRouter()
-  const [isHome, setIsHome] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(true)
-  // const [activeLink, setActiveLink] = useState('');
-  // const handleLinkClick = (href:any) => {
-  //   setActiveLink(href);
-  // };
+  const { pathname } = useRouter();
+  const [isHome, setIsHome] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(true);
 
-  //useEffect that detects if window is scrolled > 5px on the Y axis
   useEffect(() => {
     if (isHome) {
       const detectScrollY = () => {
         if (window.scrollY > 0) {
-          setIsScrolled(true)
+          setIsScrolled(true);
         } else {
-          setIsScrolled(true)
+          setIsScrolled(true);
         }
-      }
+      };
 
-      window.addEventListener("scroll", detectScrollY)
+      window.addEventListener("scroll", detectScrollY);
 
       return () => {
-        window.removeEventListener("scroll", detectScrollY)
-      }
+        window.removeEventListener("scroll", detectScrollY);
+      };
     }
-  }, [isHome])
+  }, [isHome]);
 
   useEffect(() => {
-    pathname === "/" ? setIsHome(true) : setIsHome(false)
-  }, [pathname])
+    pathname === "/" ? setIsHome(true) : setIsHome(false);
+  }, [pathname]);
 
-  const { toggle } = useMobileMenu()
+  const { toggle } = useMobileMenu();
 
+  // Use the custom hook for each navigation link
+  const homeLink = useNavigationLink('/', '홈');
+  const coffeeLink = useNavigationLink('/coffee', '커피');
+  const roasteryLink = useNavigationLink('/roastery', '로스터리');
+  const contentsLink = useNavigationLink('/contents', '컨텐츠');
 
   return (
     <div
@@ -66,66 +91,22 @@ const Nav = () => {
             }
           )}
         >
-          {/* <div className="flex-1 basis-0 h-full flex items-center"> */}
-            {/* <div className="block small:hidden">
-              <Hamburger setOpen={toggle} />  // TODO: modify
-            </div> */}
-            {/* <div className="hidden small:block h-full">
-              <DropdownMenu />
-            </div> */}
-          {/* </div> */}
-
           <div className="flex items-center h-full">
             <Link href="/" className=" mt-[8px]">
               <img src="/logo.svg" alt="logo" />
             </Link>
           </div>
-
-          {/* <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end"> */}
-            {/* <div className="hidden small:flex items-center gap-x-6 h-full">
-              {process.env.FEATURE_SEARCH_ENABLED && <DesktopSearchModal />}
-              <Link href="/account">Account</Link>
-            </div> */}
-            {/* <CartDropdown /> */} 
-          {/* </div> */}
         </nav>
         <MobileMenu />
       </header>
       <div className="flex justify-center mt-[12px] h-[34px] text-center text-[#999] text-[14px] font-semibold leading-normal">
-        <div className="relative w-[80px] text-center group group-hover:after:underline active:after:underline"><Link
-          href="/"
-         
-        >
-          홈
-          <span className="absolute left-[0px] bottom-[0px] w-[80px] h-[4px] bg-black opacity-100 transition-opacity group-hover:opacity-100 group:opacity-100"></span>
-        </Link></div>
-       <div className="w-[80px] text-center"> <Link
-          href="/coffee"
-          
-        >
-          {" "}
-          커피
-          <span className="absolute left-[-18px] bottom-[-19px] w-16 h-1 bg-black opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100"></span>
-        </Link></div>
-        <div className="w-[80px] text-center"><Link
-          href="/roastery"
-          
-        >
-          {" "}
-          로스터리
-          <span className="absolute left-[-12px] bottom-[-19px] w-20 h-1 bg-black opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100"></span>
-        </Link></div>
-        <div className="w-[80px] text-center"><Link
-          href="/contents"
-         
-        >
-          {" "}
-          컨텐츠
-          <span className="absolute left-[-12px] bottom-[-19px] w-16 h-1 bg-black opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100"></span>
-        </Link></div>
+        {homeLink}
+        {coffeeLink}
+        {roasteryLink}
+        {contentsLink}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;
