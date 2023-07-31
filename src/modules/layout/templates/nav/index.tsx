@@ -46,13 +46,13 @@ const Nav = () => {
 
   return (
     <div
-      className={clsx("top-0 h-32 inset-x-0 z-50 group", {
+      className={clsx("top-0 inset-x-0 z-50 group", {
         "": isHome,
       })}
     >
       <header
         className={clsx(
-          "relative h-20 px-8 mx-auto transition-colors border-b border-transparent duration-200 group-hover:bg-black group-hover:border-black-200",
+          "relative h-[58px] px-8 mx-auto transition-colors border-b border-transparent duration-200 group-hover:bg-black group-hover:border-black-200",
           {
             "!bg-black !border-black-200": !isHome || isScrolled,
           }
@@ -60,46 +60,46 @@ const Nav = () => {
       >
         <nav
           className={clsx(
-            "text-gray-900 flex items-center justify-between w-full h-full text-small-regular transition-colors duration-200",
+            "text-gray-900 flex items-center justify-center w-full h-full text-small-regular transition-colors duration-200",
             {
               "text-white group-hover:text-gray-900": isHome && !isScrolled,
             }
           )}
         >
-          <div className="flex-1 basis-0 h-full flex items-center">
+          {/* <div className="flex-1 basis-0 h-full flex items-center"> */}
             {/* <div className="block small:hidden">
               <Hamburger setOpen={toggle} />  // TODO: modify
             </div> */}
-            <div className="hidden small:block h-full">
+            {/* <div className="hidden small:block h-full">
               <DropdownMenu />
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
 
           <div className="flex items-center h-full">
-            <Link href="/" className="text-xl-semi uppercase">
+            <Link href="/" className=" mt-[8px]">
               <img src="/logo.svg" alt="logo" />
             </Link>
           </div>
 
-          <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
-            <div className="hidden small:flex items-center gap-x-6 h-full">
+          {/* <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end"> */}
+            {/* <div className="hidden small:flex items-center gap-x-6 h-full">
               {process.env.FEATURE_SEARCH_ENABLED && <DesktopSearchModal />}
               <Link href="/account">Account</Link>
-            </div>
-            {/* <CartDropdown /> */} // TODO: modify
-          </div>
+            </div> */}
+            {/* <CartDropdown /> */} 
+          {/* </div> */}
         </nav>
         <MobileMenu />
       </header>
-      <div className="flex justify-around mt-1">
-        <div className="relative group group-hover:after:underline active:after:underline"><Link
+      <div className="flex justify-center mt-[12px] h-[34px] text-center text-[#999] text-[14px] font-semibold leading-normal">
+        <div className="relative w-[80px] text-center group group-hover:after:underline active:after:underline"><Link
           href="/"
          
         >
           홈
-          <span className="absolute left-[-24px] bottom-[-19px] w-16 h-1 bg-black opacity-100 transition-opacity group-hover:opacity-100 group:opacity-100"></span>
+          <span className="absolute left-[0px] bottom-[0px] w-[80px] h-[4px] bg-black opacity-100 transition-opacity group-hover:opacity-100 group:opacity-100"></span>
         </Link></div>
-       <div> <Link
+       <div className="w-[80px] text-center"> <Link
           href="/coffee"
           
         >
@@ -107,7 +107,7 @@ const Nav = () => {
           커피
           <span className="absolute left-[-18px] bottom-[-19px] w-16 h-1 bg-black opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100"></span>
         </Link></div>
-        <div><Link
+        <div className="w-[80px] text-center"><Link
           href="/roastery"
           
         >
@@ -115,7 +115,7 @@ const Nav = () => {
           로스터리
           <span className="absolute left-[-12px] bottom-[-19px] w-20 h-1 bg-black opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100"></span>
         </Link></div>
-        <div><Link
+        <div className="w-[80px] text-center"><Link
           href="/contents"
          
         >

@@ -25,8 +25,8 @@ const Roastery = () => {
   return (
     <div>
       <img src="/rect.png" alt="rect_line" />
-      <div className="w-[200px] px-4 text-xl font-semibold mt-10 mb-3">
-        사람과 커피를 잇는 로스터리 인터뷰
+      <div className="w-[147px] ml-[20px] mt-10 mb-3 text-black text-[18px] font-semibold leading-normal">
+      사람과 커피를 잇는 로스터리 인터뷰
       </div>
       <div className="h-[360px] w-360px relative my-6">
         <div className="text-white absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:text-left small:justify-end small:items-start small:p-32">
@@ -69,16 +69,18 @@ const Roastery = () => {
         </div>
       </div>
       <div className="flex flex-row justify-evenly mb-3">
-        <div className="flex flex-col gap-1 w-[96px]">
+      <div className="relative flex flex-col w-[96px]">
           <img src="/roastery1.png" alt="" />
+          <button>
+              {" "}
+              <img src="/save_a.svg" alt="" className="absolute right-[8px] top-[80px]"/>
+            </button>
           <div className="flex flex-row justify-between mx-1 mt-2">
+            
             <div className=" text-[12px] text-gray-600 leading-5">
               [비브레이브]
             </div>
-            <button>
-              {" "}
-              <img src="/save_n.svg" alt="" />
-            </button>
+          
           </div>
           <div className="mx-1 text-[12px] text-gray-600 leading-4">
             {" "}
@@ -86,16 +88,18 @@ const Roastery = () => {
           </div>
           <div className="mx-1 my-1 text-sm font-semibold">13.000 원</div>
         </div>
-        <div className="flex flex-col gap-1 w-[96px]">
+        <div className="relative flex flex-col w-[96px]">
           <img src="/roastery2.png" alt="" />
+          <button>
+              {" "}
+              <img src="/save_n.svg" alt="" className="absolute right-[8px] top-[80px]"/>
+            </button>
           <div className="flex flex-row justify-between mx-1 mt-2">
+            
             <div className=" text-[12px] text-gray-600 leading-5">
               [비브레이브]
             </div>
-            <button>
-              {" "}
-              <img src="/save_a.svg" alt="" />
-            </button>
+          
           </div>
           <div className="mx-1 text-[12px] text-gray-600 leading-4">
             {" "}
@@ -103,16 +107,18 @@ const Roastery = () => {
           </div>
           <div className="mx-1 my-1 text-sm font-semibold">13.000 원</div>
         </div>
-        <div className="flex flex-col gap-1 w-[96px]">
-          <img src="/roastery1.png" alt="" />
+        <div className="relative flex flex-col w-[96px]">
+          <img src="/roastery3.png" alt="" />
+          <button>
+              {" "}
+              <img src="/save_a.svg" alt="" className="absolute right-[8px] top-[80px]"/>
+            </button>
           <div className="flex flex-row justify-between mx-1 mt-2">
+            
             <div className=" text-[12px] text-gray-600 leading-5">
               [비브레이브]
             </div>
-            <button>
-              {" "}
-              <img src="/save_n.svg" alt="" />
-            </button>
+          
           </div>
           <div className="mx-1 text-[12px] text-gray-600 leading-4">
             {" "}
@@ -126,7 +132,7 @@ const Roastery = () => {
         <button className="w-[320px] h-[44px] rounded-md border border-gray-300 bg-white flex justify-center my-3 ">
           <Link href={"/roastery"}>
             {" "}
-            <div className=" text-base font-semibold text-gray-700 my-2 flex flex-row">
+            <div className="font-semibold text-gray-700 my-2.5 flex flex-row text-[14px] ">
               보러가기
               <img src="/arrow_right.svg" alt="arrow" />
             </div>
@@ -137,7 +143,7 @@ const Roastery = () => {
       <div className="pt-12 pb-6">
         <div className="py-6">
           <div className="flex flex-wrap items-center">
-            <div className="flex justify-start text-xl font-Suite text-black-600 mb-6 font-semibold leading-normal px-6">
+            <div className="flex justify-start mb-6 px-6  text-black text-[18px] font-semibold leading-normal">
               실시간 검색이 많은 로스터리
             </div>
 

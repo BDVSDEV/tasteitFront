@@ -1,5 +1,5 @@
 import Head from "@modules/common/components/head"
-import FeaturedProducts from "@modules/home/components/featured-products"
+import FeaturedProducts from "@modules/home/components/원두"
 import Hero from "@modules/home/components/hero"
 import Layout from "@modules/layout/templates"
 import { ReactElement } from "react"

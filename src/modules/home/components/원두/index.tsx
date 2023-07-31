@@ -11,7 +11,7 @@ const FeaturedProducts = () => {
     <div className="pt-12 pb-6">
       <div className="py-6">
         <div className="flex flex-wrap items-center">
-          <div className="flex justify-start text-xl font-Suite text-black-600 mb-6 font-semibold leading-normal px-6">
+          <div className="flex justify-start w-[165px] text-black-600 mb-6 ml-[20px] text-black text-[18px] font-semibold leading-normal">
             재구매율이 많은 원두
           </div>
 
@@ -26,8 +26,8 @@ const FeaturedProducts = () => {
             />
 
             <div className="px-4 flex-col items-center ">
-              <p className="text-base">[비브레이브] 빵튀케냐AA</p>
-              <p className="text-gray-600 font-['Noto Sans'] text-xs font-normal">
+              <p className="text-[#333] font-suite text-[14px] font-semibold leading-normal tracking-tighter">[비브레이브] 빵튀케냐AA</p>
+              <p className="text-[#666] font-[Noto Sans] text-[12px] font-normal leading-normal tracking-tighter">
                 #애플 #블루베리 #산미
               </p>
             </div>
@@ -48,8 +48,8 @@ const FeaturedProducts = () => {
             />
 
             <div className="px-4 flex-col items-center ">
-              <p className="text-base">[비브레이브] 빵튀케냐AA</p>
-              <p className="text-gray-600 font-['Noto Sans'] text-xs font-normal">
+            <p className="text-[#333] font-suite text-[14px] font-semibold leading-normal tracking-tighter">[비브레이브] 빵튀케냐AA</p>
+              <p className="text-[#666] font-[Noto Sans] text-[12px] font-normal leading-normal tracking-tighter">
                 #애플 #블루베리 #산미
               </p>
             </div>
@@ -70,8 +70,8 @@ const FeaturedProducts = () => {
             />
 
             <div className="px-4 flex-col items-center">
-              <p className="text-base">[비브레이브] 빵튀케냐AA</p>
-              <p className="text-gray-600 font-['Noto Sans'] text-xs font-normal">
+            <p className="text-[#333] font-suite text-[14px] font-semibold leading-normal tracking-tighter">[비브레이브] 빵튀케냐AA</p>
+              <p className="text-[#666] font-[Noto Sans] text-[12px] font-normal leading-normal tracking-tighter">
                 #애플 #블루베리 #산미
               </p>
             </div>
