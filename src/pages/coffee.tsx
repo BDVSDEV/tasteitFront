@@ -1,5 +1,5 @@
 import Head from "@modules/common/components/head"
-import FeaturedProducts from "@modules/home/components/featured-products"
+import FeaturedProducts from "@modules/home/components/원두"
 import Hero from "@modules/home/components/hero"
 import Layout from "@modules/layout/templates"
 import { ReactElement } from "react"
@@ -32,7 +32,7 @@ const Coffee = () => {
                 제주도에 가고 싶을 때
             </div>
             <div className="w-100% mr-5 ml-5"> 
-                이색적인asdasd
+                이색적인
             </div>
       </div>
       <div className="flex items-start justify-end mx-2 mt-2">
