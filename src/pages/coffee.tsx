@@ -44,22 +44,9 @@ const Coffee = () => {
       </div>
       <div className="flex mt-6 mx-15 flex-wrap">
           {/* api 만들어지면 map 으로 교체 예정  + 클릭 시 추가 데이터 받아오기 작업 추가 현재 목업*/}
-        <div className="ml-5 mr-5 mb-5">  
+        <div className="ml-5 mr-[16px] mb-[15px]">  
         <Image src={test} alt="downbtn" width={152} height={152}></Image>
-          <div className="mt-2 flex w-100% justify-between ">
-            <div>
-              [비브레이브]
-            </div>
-            <div className="mt-1.5">
-              <Image src={dibsoff} alt="dibsoff"/>
-            </div>
-          </div>  
-          <div>빵튀케냐케냐AA 띠리꾸</div>
-          <div> 13,000 원</div>
-        </div>
-        <div>
-          <Image src={test2} alt="downbtn" width={152} height={152}></Image>
-          <div className="mt-2 flex w-100% justify-between ">
+          <div className="mt-2 flex w-152 justify-between ">
             <div>
               [비브레이브]
             </div>
@@ -71,9 +58,24 @@ const Coffee = () => {
           <div> 13,000 원</div>
         </div>
 
-        <div className="ml-5 mr-5 mb-5">  
+        
+        <div className="mr-[20px]">
+          <Image src={test2} alt="downbtn" width={152} height={152}></Image>
+          <div className="mt-2 flex w-152 justify-between ">
+            <div>
+              [비브레이브]
+            </div>
+            <div className="mt-1.5">
+              <Image src={dibsoff} alt="dibsoff"/>
+            </div>
+          </div>  
+          <div>빵튀케냐케냐AA 띠리꾸</div>
+          <div> 13,000 원</div>
+        </div>
+
+        <div className="ml-5 mr-[16px] mb-[15px]">  
         <Image src={test3} alt="downbtn" width={152} height={152}></Image>
-        <div className="mt-2 flex w-100% justify-between ">
+          <div className="mt-2 flex w-152 justify-between ">
             <div>
               [비브레이브]
             </div>
@@ -84,9 +86,11 @@ const Coffee = () => {
           <div>빵튀케냐케냐AA 띠리꾸</div>
           <div> 13,000 원</div>
         </div>
-        <div>
+
+        
+        <div className="mr-[20px]">
           <Image src={test} alt="downbtn" width={152} height={152}></Image>
-          <div className="mt-2 flex w-100% justify-between ">
+          <div className="mt-2 flex w-152 justify-between ">
             <div>
               [비브레이브]
             </div>
@@ -97,23 +101,9 @@ const Coffee = () => {
           <div>빵튀케냐케냐AA 띠리꾸</div>
           <div> 13,000 원</div>
         </div>
-
-        <div className="ml-5 mr-5 mb-5">  
+        <div className="ml-5 mr-[16px] mb-[15px]">  
         <Image src={test2} alt="downbtn" width={152} height={152}></Image>
-        <div className="mt-2 flex w-100% justify-between ">
-            <div>
-              [비브레이브]
-            </div>
-            <div className="mt-1.5">
-              <Image src={dibsoff} alt="dibsoff"/>
-            </div>
-          </div>  
-          <div>빵튀케냐케냐AA 띠리꾸</div>
-          <div> 13,000 원</div>
-        </div>
-        <div>
-          <Image src={test3} alt="downbtn" width={152} height={152}></Image>
-          <div className="mt-2 flex w-100% justify-between ">
+          <div className="mt-2 flex w-152 justify-between ">
             <div>
               [비브레이브]
             </div>
@@ -125,9 +115,10 @@ const Coffee = () => {
           <div> 13,000 원</div>
         </div>
 
-        <div className="ml-5 mr-5 mb-5">  
-        <Image src={test} alt="downbtn" width={152} height={152}></Image>
-        <div className="mt-2 flex w-100% justify-between ">
+        
+        <div className="mr-[20px]">
+          <Image src={test3} alt="downbtn" width={152} height={152}></Image>
+          <div className="mt-2 flex w-152 justify-between ">
             <div>
               [비브레이브]
             </div>
@@ -138,9 +129,10 @@ const Coffee = () => {
           <div>빵튀케냐케냐AA 띠리꾸</div>
           <div> 13,000 원</div>
         </div>
-        <div>
-          <Image src={test2} alt="downbtn" width={152} height={152}></Image>
-          <div className="mt-2 flex w-100% justify-between ">
+
+        <div className="ml-5 mr-[16px] mb-[15px]">  
+        <Image src={test3} alt="downbtn" width={152} height={152}></Image>
+          <div className="mt-2 flex w-152 justify-between ">
             <div>
               [비브레이브]
             </div>
@@ -151,6 +143,22 @@ const Coffee = () => {
           <div>빵튀케냐케냐AA 띠리꾸</div>
           <div> 13,000 원</div>
         </div>
+
+        
+        <div className="mr-[20px]">
+          <Image src={test} alt="downbtn" width={152} height={152}></Image>
+          <div className="mt-2 flex w-152 justify-between ">
+            <div>
+              [비브레이브]
+            </div>
+            <div className="mt-1.5">
+              <Image src={dibsoff} alt="dibsoff"/>
+            </div>
+          </div>  
+          <div>빵튀케냐케냐AA 띠리꾸</div>
+          <div> 13,000 원</div>
+        </div>
+
 
       </div>
       <div className="flex justify-center items-center mt-5 mb-40 w-100% ">
