@@ -24,7 +24,7 @@ const Roastery = () => {
 
   return (
     <div>
-      <img src="/rect.png" alt="rect_line" />
+      <div className="w-[100vw] h-[8px] flex-shrink-0 bg-[#ECECEC]"></div>
       <div className="w-[147px] ml-[20px] mt-10 mb-3 text-black text-[18px] font-semibold leading-normal">
       사람과 커피를 잇는 로스터리 인터뷰
       </div>
@@ -170,7 +170,7 @@ const Roastery = () => {
               </div>
             </div>
             <div className="flex justify-end py-6">
-              <img src="/line.png" alt="line" />
+            <div className="w-[95vw] h-[1px] flex-shrink-0 bg-[#333]"></div>
             </div>
             <div className="flex h-[56px] items-center px-6 py-8">
               <img
@@ -192,7 +192,7 @@ const Roastery = () => {
               </div>
             </div>
             <div className="flex justify-end py-6">
-              <img src="/line.png" alt="line" />
+            <div className="w-[95vw] h-[1px] flex-shrink-0 bg-[#333]"></div>
             </div>
             <div className="flex h-[56px] items-center px-6 py-8">
               <img

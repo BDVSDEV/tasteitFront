@@ -38,7 +38,7 @@ const FeaturedProducts = () => {
             </div>
           </div>
           <div className="flex justify-end py-6">
-            <img src="/line.png" alt="line" />
+            <div className="w-[95vw] h-[1px] flex-shrink-0 bg-[#333]"></div>
           </div>
           <div className="flex h-[56px] items-center px-6 py-8">
             <img
@@ -60,7 +60,8 @@ const FeaturedProducts = () => {
             </div>
           </div>
           <div className="flex justify-end py-6">
-            <img src="/line.png" alt="line" />
+          <div className="w-[95vw] h-[1px] flex-shrink-0 bg-[#333]"></div>
+
           </div>
           <div className="flex h-[56px] items-center px-6">
             <img
