@@ -24,16 +24,24 @@ const Coffee = () => {
       <div className="h-[46px] w-100% flex flex-row items-center justify-between whitespace-nowrap overflow-auto no-scrollbar">
         {/* api 만들어지면 공통컴포넌트 적용 예정 현재 목업*/}
         <div className="w-[46px] h-[33px] bg-black rounded-full text-center ">
-          <text className="text-white text-[14px]">All</text>
+          <div className="mt-[3px]">
+            <text className="text-white text-[14px]">All</text>
+          </div>
         </div>
         <div className="w-[80px] h-[33px] bg-zinc-100 rounded-full text-center ">
-          <text className="text-black text-[14px]">산미 있는</text>
+          <div className="mt-[3px]">
+            <text className="text-black text-[14px]">산미 있는</text>
+          </div>
         </div>
         <div className="w-[143px] h-[33px] bg-zinc-100 rounded-full text-center ">
-          <text className="text-black text-[14px]">제주도에 가고 싶을 때</text>
+          <div className="mt-[3px]">
+            <text className="text-black text-[14px]">제주도에 가고 싶을 때</text>
+          </div>
         </div>
         <div className="w-[70px] h-[33px] bg-zinc-100 rounded-full text-center ">
-          <text className="text-black text-[14px]">이색적인</text>
+          <div className="mt-[3px]">
+            <text className="text-black text-[14px]">이색적인</text>
+          </div>
         </div>
       </div>
       <div className="flex items-start justify-end mx-2 mt-2">
