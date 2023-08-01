@@ -32,7 +32,7 @@ const Contents = () => {
                 제주도에 가고 싶을 때
             </div>
             <div className="w-100% mr-5 ml-5"> 
-                이색적인asdasd
+                이색적인
             </div>
       </div>
       <div>

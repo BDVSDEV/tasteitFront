@@ -19,10 +19,10 @@ const Beans = () => {
             <div className=" text-[12px] text-gray-600 leading-5">
               [비브레이브]
             </div>
-            <button>
+            {/* <button>
               {" "}
               <img src="/save_n.svg" alt="" className="absolute right-[8px] top-[80px]"/>
-            </button>
+            </button> */}
           </div>
           <div className=" mx-1 text-[12px] text-gray-600 leading-4">
             {" "}
@@ -36,10 +36,10 @@ const Beans = () => {
             <div className=" text-[12px] text-gray-600 leading-5">
               [비브레이브]
             </div>
-            <button>
+            {/* <button>
               {" "}
               <img src="/save_a.svg" alt="" className="absolute right-[8px] top-[80px]"/>
-            </button>
+            </button> */}
           </div>
           <div className="mx-1 text-[12px] text-gray-600 leading-4">
             {" "}
@@ -53,10 +53,10 @@ const Beans = () => {
             <div className=" text-[12px] text-gray-600 leading-5">
               [비브레이브]
             </div>
-            <button>
+            {/* <button>
               {" "}
               <img src="/save_n.svg" alt="" className="absolute right-[8px] top-[80px]"/>
-            </button>
+            </button> */}
           </div>
           <div className="mx-1 text-[12px] text-gray-600 leading-4">
             {" "}
@@ -72,10 +72,10 @@ const Beans = () => {
             <div className=" text-[12px] text-gray-600 leading-5">
               [비브레이브]
             </div>
-            <button>
+            {/* <button>
               {" "}
               <img src="/save_n.svg" alt="" className="absolute right-[8px] top-[80px]"/>
-            </button>
+            </button> */}
           </div>
           <div className="mx-1 text-[12px] text-gray-600 leading-4">
             {" "}
@@ -89,10 +89,10 @@ const Beans = () => {
             <div className=" text-[12px] text-gray-600 leading-5">
               [비브레이브]
             </div>
-            <button>
+            {/* <button>
               {" "}
               <img src="/save_a.svg" alt="" className="absolute right-[8px] top-[80px]"/>
-            </button>
+            </button> */}
           </div>
           <div className="mx-1 text-[12px] text-gray-600 leading-4">
             {" "}
@@ -106,10 +106,10 @@ const Beans = () => {
             <div className=" text-[12px] text-gray-600 leading-5">
               [비브레이브]
             </div>
-            <button>
+            {/* <button>
               {" "}
               <img src="/save_a.svg" alt="" className="absolute right-[8px] top-[80px]"/>
-            </button>
+            </button> */}
           </div>
           <div className="mx-1 text-[12px] text-gray-600 leading-4">
             {" "}

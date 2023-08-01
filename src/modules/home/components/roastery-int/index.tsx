@@ -71,10 +71,10 @@ const Roastery = () => {
       <div className="flex flex-row justify-evenly mb-3">
       <div className="relative flex flex-col w-[96px]">
           <img src="/roastery1.png" alt="" />
-          <button>
+          {/* <button>
               {" "}
               <img src="/save_a.svg" alt="" className="absolute right-[8px] top-[80px]"/>
-            </button>
+            </button> */}
           <div className="flex flex-row justify-between mx-1 mt-2">
             
             <div className=" text-[12px] text-gray-600 leading-5">
@@ -90,10 +90,10 @@ const Roastery = () => {
         </div>
         <div className="relative flex flex-col w-[96px]">
           <img src="/roastery2.png" alt="" />
-          <button>
+          {/* <button>
               {" "}
               <img src="/save_n.svg" alt="" className="absolute right-[8px] top-[80px]"/>
-            </button>
+            </button> */}
           <div className="flex flex-row justify-between mx-1 mt-2">
             
             <div className=" text-[12px] text-gray-600 leading-5">
@@ -109,10 +109,10 @@ const Roastery = () => {
         </div>
         <div className="relative flex flex-col w-[96px]">
           <img src="/roastery3.png" alt="" />
-          <button>
+          {/* <button>
               {" "}
               <img src="/save_a.svg" alt="" className="absolute right-[8px] top-[80px]"/>
-            </button>
+            </button> */}
           <div className="flex flex-row justify-between mx-1 mt-2">
             
             <div className=" text-[12px] text-gray-600 leading-5">
