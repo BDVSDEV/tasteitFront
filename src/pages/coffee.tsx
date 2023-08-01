@@ -232,10 +232,10 @@ const Coffee = () => {
       </div>
       </div>
       <div className="flex justify-center items-center mt-5 mb-40 w-100% ">
-        <div className=" w-[320px] h-[44px] flex justify-center items-center rounded-md border-solid border border-fff">
-          펼쳐보기 +
+          <div className=" w-[320px] h-[44px] flex justify-center items-center rounded-md border-solid border border-fff">
+            펼쳐보기 <img src="/plus.svg" alt="" />
+          </div>
         </div>
-      </div>
     </>
   );
 };

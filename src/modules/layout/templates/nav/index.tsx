@@ -18,7 +18,16 @@ function useNavigationLink(path:string, label:string) {
   return (
     <Link href={path}>
       <div className="relative w-[80px] text-center group">
-        {label}
+        <span className={clsx(
+            "transition-colors duration-200",
+            {
+              "text-black": isActive,
+              "text-gray-600": !isActive
+            }
+          )}
+        >
+          {label}
+        </span>
         <div 
           className={clsx(
             "absolute left-0 bottom-[-13px] h-[4px] bg-black transform transition-all ease-in-out duration-200", 
@@ -71,7 +80,7 @@ const Nav = () => {
 
   return (
     <div
-      className={clsx("top-0 inset-x-0 z-50 group", {
+      className={clsx("top-0 inset-x-0 z-50 group w-[100vw]", {
         "": isHome,
       })}
     >
