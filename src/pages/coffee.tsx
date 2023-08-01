@@ -50,42 +50,19 @@ const Coffee = () => {
         <Image src={group} alt="group" className="mx-2 mt-1"></Image>
       </div>
       <div>
-        <div className="flex mt-6 mx-15 flex-row justify-evenly flex-wrap ">
+        <div className="flex mt-6 mx-15 flex-wrap">
         {/* api 만들어지면 map 으로 교체 예정  + 클릭 시 추가 데이터 받아오기 작업 추가 현재 목업*/}
-        <div className="mb-[15px]">
+        <div className="ml-5 mr-[16px] mb-[15px]">
           <div className="relative">
             <Image src={test} alt="downbtn" width={152} height={152}></Image>
-            <Image
-              src={dibson}
-              alt="dibson"
-              className="absolute mx-0 right-1 bottom-[-10px] "
-            />
-          </div>
-        
-          <div className="mt-2 flex w-[152px]">
-            <div>
-              <text className="text-xs">[비브레이브]</text>
-            </div>
-          </div>
-          <text className="text-sm font-normal">빵튀케냐케냐AA 띠리꾸</text>
-          <div>
-            {" "}
-            <text className="text-xs font-semibold">13,000 </text>{" "}
-            <text className="text-xs">원</text>
-          </div>
-        </div>
-
-        <div className="mb-[15px]">
-          <div className="relative">
-            <Image src={test2} alt="downbtn" width={152} height={152}></Image>
             <Image
               src={dibsoff}
               alt="dibsoff"
               className="absolute mx-0 right-1 bottom-[-10px] "
             />
           </div>
-        
-          <div className="mt-2 flex w-[152px]">
+
+          <div className="mt-2 flex w-152 justify-between ">
             <div>
               <text className="text-xs">[비브레이브]</text>
             </div>
@@ -98,7 +75,30 @@ const Coffee = () => {
           </div>
         </div>
 
-        <div className="mb-[15px]">
+        <div className="mr-[20px]">
+          <div className="relative">
+            <Image src={test2} alt="downbtn" width={152} height={152}></Image>
+            <Image
+              src={dibson}
+              alt="dibson"
+              className="absolute mx-0 right-1 bottom-[-10px] "
+            />
+          </div>
+          <div className="mt-2 flex w-152 justify-between ">
+            <div>
+              <text className="text-xs">[비브레이브]</text>
+            </div>
+            <div className="mt-1.5"></div>
+          </div>
+          <text className="text-sm font-normal">빵튀케냐케냐AA 띠리꾸</text>
+          <div>
+            {" "}
+            <text className="text-xs font-semibold">13,000 </text>{" "}
+            <text className="text-xs">원</text>
+          </div>
+        </div>
+
+        <div className="ml-5 mr-[16px] mb-[15px]">
           <div className="relative">
             <Image src={test3} alt="downbtn" width={152} height={152}></Image>
             <Image
@@ -107,21 +107,20 @@ const Coffee = () => {
               className="absolute mx-0 right-1 bottom-[-10px] "
             />
           </div>
-        
-          <div className="mt-2 flex w-[152px]">
+          <div className="mt-2 flex w-152 justify-between ">
             <div>
               <text className="text-xs">[비브레이브]</text>
             </div>
+            <div className="mt-1.5"></div>
           </div>
           <text className="text-sm font-normal">빵튀케냐케냐AA 띠리꾸</text>
           <div>
-            {" "}
-            <text className="text-xs font-semibold">13,000 </text>{" "}
+            <text className="text-xs font-semibold">13,000 </text>
             <text className="text-xs">원</text>
           </div>
         </div>
 
-        <div className="mb-[15px]">
+        <div className="mr-[20px]">
           <div className="relative">
             <Image src={test} alt="downbtn" width={152} height={152}></Image>
             <Image
@@ -130,21 +129,20 @@ const Coffee = () => {
               className="absolute mx-0 right-1 bottom-[-10px] "
             />
           </div>
-        
-          <div className="mt-2 flex w-[152px]">
+          <div className="mt-2 flex w-152 justify-between ">
             <div>
               <text className="text-xs">[비브레이브]</text>
             </div>
+            <div className="mt-1.5"></div>
           </div>
           <text className="text-sm font-normal">빵튀케냐케냐AA 띠리꾸</text>
           <div>
-            {" "}
-            <text className="text-xs font-semibold">13,000 </text>{" "}
+            <text className="text-xs font-semibold">13,000 </text>
             <text className="text-xs">원</text>
           </div>
         </div>
 
-        <div className="mb-[15px]">
+        <div className="ml-5 mr-[16px] mb-[15px]">
           <div className="relative">
             <Image src={test2} alt="downbtn" width={152} height={152}></Image>
             <Image
@@ -153,21 +151,20 @@ const Coffee = () => {
               className="absolute mx-0 right-1 bottom-[-10px] "
             />
           </div>
-        
-          <div className="mt-2 flex w-[152px]">
+          <div className="mt-2 flex w-152 justify-between ">
             <div>
               <text className="text-xs">[비브레이브]</text>
             </div>
+            <div className="mt-1.5"></div>
           </div>
           <text className="text-sm font-normal">빵튀케냐케냐AA 띠리꾸</text>
           <div>
-            {" "}
-            <text className="text-xs font-semibold">13,000 </text>{" "}
+            <text className="text-xs font-semibold">13,000 </text>
             <text className="text-xs">원</text>
           </div>
         </div>
 
-        <div className="mb-[15px]">
+        <div className="mr-[20px]">
           <div className="relative">
             <Image src={test3} alt="downbtn" width={152} height={152}></Image>
             <Image
@@ -176,69 +173,63 @@ const Coffee = () => {
               className="absolute mx-0 right-1 bottom-[-10px] "
             />
           </div>
-        
-          <div className="mt-2 flex w-[152px]">
+          <div className="mt-2 flex w-152 justify-between ">
             <div>
               <text className="text-xs">[비브레이브]</text>
             </div>
+            <div className="mt-1.5"></div>
           </div>
           <text className="text-sm font-normal">빵튀케냐케냐AA 띠리꾸</text>
           <div>
-            {" "}
-            <text className="text-xs font-semibold">13,000 </text>{" "}
+            <text className="text-xs font-semibold">13,000 </text>
             <text className="text-xs">원</text>
           </div>
         </div>
 
-        <div className="mb-[15px]">
+        <div className="ml-5 mr-[16px] mb-[15px]">
           <div className="relative">
             <Image src={test} alt="downbtn" width={152} height={152}></Image>
             <Image
-              src={dibson}
-              alt="dibson"
+              src={dibsoff}
+              alt="dibsoff"
               className="absolute mx-0 right-1 bottom-[-10px] "
             />
           </div>
-        
-          <div className="mt-2 flex w-[152px]">
+          <div className="mt-2 flex w-152 justify-between ">
             <div>
               <text className="text-xs">[비브레이브]</text>
             </div>
+            <div className="mt-1.5"></div>
           </div>
           <text className="text-sm font-normal">빵튀케냐케냐AA 띠리꾸</text>
           <div>
-            {" "}
-            <text className="text-xs font-semibold">13,000 </text>{" "}
+            <text className="text-xs font-semibold">13,000 </text>
             <text className="text-xs">원</text>
           </div>
         </div>
 
-        <div className="mb-[15px]">
+        <div className="mr-[20px]">
           <div className="relative">
             <Image src={test2} alt="downbtn" width={152} height={152}></Image>
             <Image
-              src={dibson}
-              alt="dibson"
+              src={dibsoff}
+              alt="dibsoff"
               className="absolute mx-0 right-1 bottom-[-10px] "
             />
           </div>
-        
-          <div className="mt-2 flex w-[152px]">
+          <div className="mt-2 flex w-152 justify-between ">
             <div>
               <text className="text-xs">[비브레이브]</text>
             </div>
+            <div className="mt-1.5"></div>
           </div>
           <text className="text-sm font-normal">빵튀케냐케냐AA 띠리꾸</text>
           <div>
-            {" "}
-            <text className="text-xs font-semibold">13,000 </text>{" "}
+            <text className="text-xs font-semibold">13,000 </text>
             <text className="text-xs">원</text>
           </div>
         </div>
-        
-       
-        
-        </div>
+      </div>
       </div>
       <div className="flex justify-center items-center mt-5 mb-40 w-100% ">
         <div className=" w-[320px] h-[44px] flex justify-center items-center rounded-md border-solid border border-fff">
