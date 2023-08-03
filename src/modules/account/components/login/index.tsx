@@ -72,7 +72,7 @@ const Login = () => {
             </span>
           </div>
         )}
-        <Button className="mt-6">Enter</Button>
+        <Button type="submit" className="mt-6">Enter</Button>
       </form>
       <span className="text-center text-gray-700 text-small-regular mt-6">
         Not a member?{" "}
