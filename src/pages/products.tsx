@@ -14,7 +14,7 @@ import dibsoff from "../../public/dibsoff.svg";
 import dibson from "../../public/dibson.svg";
 import router from "next/router";
 
-const Coffee = () => {
+const Products = () => {
   return (
     <>
       <Nav />
@@ -238,4 +238,4 @@ const Coffee = () => {
   );
 };
 
-export default Coffee;
+export default Products;
