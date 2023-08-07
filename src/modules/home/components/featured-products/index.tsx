@@ -32,7 +32,7 @@ const FeaturedProducts = () => {
               </p>
             </div>
             <div className="ml-auto flex">
-              <Link href={"/coffee"}>
+              <Link href={"/products"}>
                 <img src="/arrow_right.svg" alt="" />
               </Link>
             </div>
@@ -54,7 +54,7 @@ const FeaturedProducts = () => {
               </p>
             </div>
             <div className="ml-auto flex">
-              <Link href={"/coffee"}>
+              <Link href={"/products"}>
                 <img src="/arrow_right.svg" alt="" />
               </Link>
             </div>
@@ -77,7 +77,7 @@ const FeaturedProducts = () => {
               </p>
             </div>
             <div className="ml-auto flex">
-              <Link href={"/coffee"}>
+              <Link href={"/products"}>
                 <img src="/arrow_right.svg" alt="" />
               </Link>
             </div>

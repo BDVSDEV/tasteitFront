@@ -31,7 +31,7 @@ const Hero = () => {
       <div className="text-white absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:text-left small:justify-end small:items-start small:p-32">
         
         
-        <Link href="/coffee"></Link>    
+        <Link href="/products"></Link>    
         {/* /store */}
         {/* TODO: click logic */}
       </div>

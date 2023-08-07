@@ -74,7 +74,7 @@ const Nav = () => {
 
   // Use the custom hook for each navigation link
   const homeLink = useNavigationLink('/', '홈');
-  const coffeeLink = useNavigationLink('/coffee', '커피');
+  const coffeeLink = useNavigationLink('/products', '커피');
   const roasteryLink = useNavigationLink('/roastery', '로스터리');
   const contentsLink = useNavigationLink('/contents', '컨텐츠');
 
