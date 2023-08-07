@@ -15,7 +15,7 @@ const CoffeeDetail = () => {
     <>
     <DetailNav />
       <div>
-        <div className="w-[100%] flex justify-evenly">
+        <div className="w-[100%] flex flex-col justify-center items-center">
           <Image src={test} alt="test" width={360} height={410} ></Image>
         </div>
 
@@ -27,16 +27,20 @@ const CoffeeDetail = () => {
             <Image src={share} alt="share" width={24} height={24} className="mt-[10px]"/>
           </div>
         </div>
-        <div className="flex flex-col justify-center">
-          <div className="flex mt-[8px]">
+        <div className="flex w-[100%] justify-center">
+          <div className="mt-[8px] w-[360px]">
             <text className="text-left text-xs ml-[20px]">서브타이틀서브타이틀서브타이틀</text>
           </div>
-          <div className="flex mt-[8px] flex-row">
-            <text className="text-left text-base ml-[20px]">13,000</text>
-            <text className="text-left text-xs mt-[4px] ml-[3px]">원~</text>
+        </div>
+        <div>
+          <div className="flex w-[100%] mt-[16px] justify-center">
+            <div className="w-[360px]">
+              <text className="text-left bold text-base ml-[20px]">13,000</text>
+              <text className="text-left bold text-base mt-[4px] ml-[3px]">원~</text>
+            </div>
+            
           </div>
         </div>
-
         <div className="flex flex-row w-[100%] mt-[36px] justify-center">
           <Image src={dibsonBig} alt="dibsonBig" width={64} height={52}></Image>
           <div className="flex justify-center items-center w-[276px] h-[44px] bg-black mt-[10px] rounded">
@@ -52,7 +56,7 @@ const CoffeeDetail = () => {
           </div>
         </div>
 
-        <div className=" mt-[21px] flex justify-center items-center flex-col mt-[86px]">
+        <div className="flex justify-center items-center flex-col mt-[86px]">
           <Image src={test} width={320} height={320} alt="test"></Image>
           <text className="mt-[16px] text-xl">[비브레이브]Story</text>
           <div className="w-[300px] h-[95px] mt-[24px]">
@@ -60,7 +64,7 @@ const CoffeeDetail = () => {
           </div>
         </div>
 
-        <div className=" mt-[21px] flex justify-center items-center flex-col mt-[86px]">
+        <div className=" flex justify-center items-center flex-col mt-[86px]">
           <Image src={test} width={320} height={320} alt="test"></Image>
           <text className="mt-[16px] text-xl">[비브레이브]Story</text>
           <div className="w-[300px] h-[95px] mt-[24px]">
@@ -68,25 +72,30 @@ const CoffeeDetail = () => {
           </div>
         </div>
 
-        <div className="mt-[86px] flex justify-evenly">
-          <div className="mb-[16px]">
+        <div className="mt-[86px] w-[100%] flex  flex-col  justify-center ml-[20px]">
+          <div className="mb-[24px] w-[360px]">
             <text>상품정보</text>
           </div>
-          <div className="mb-[16px]">
-            <text>판매단위</text> <text>1봉</text>
+          <div className="mb-[16px] w-[360px] flex flex-col justify-start items-start">
+            <div >
+              <text>판매단위</text> <text>1봉</text>
+            </div>
+            
+            <div>
+              <text>원산지</text> <text>상품 설명 / 상제정보 참조</text>
+            </div>
+            <div >
+              <text>유통기한( 또는 소비 기한 ) 정보</text> <text>로스팅일로부터 15일 이내의 원두를 수령하실 수 있습니다.</text>
+            </div>
+            <div>
+              <text>판매단위</text> <text>1봉</text>
+            </div>
+            <div>
+              <text>안내사항</text> <text>[비브레이브] 블렌드 원두 (프루티봉봉) 500g (NEW!) - 2023년 7월 15일 23시 주문 건까지, 제조일자 2023년 6월 30일 상품 출고 원두는 어느정도 가스가 배출되고 난 후 향미가 더욱 선명해집니다. 원두 패키지를 열고 닫았다를 반복하게 되면 공기 중의 산소가 맛과 향을 해치는 요소가 되기도 하오니, 서늘하고 건조한 곳에 홀빈 상태로 밀봉하여 보관해주시고 개봉 후에는 가급적 빠른 시일내에 섭취하시기를 권장 드립니다.</text>
+            </div>
+
           </div>
-          <div className="mb-[16px]">
-            <text>원산지</text> <text>상품 설명 / 상제정보 참조</text>
-          </div>
-          <div className="mb-[16px]">
-            <text>유통기한( 또는 소비 기한 ) 정보</text> <text>로스팅일로부터 15일 이내의 원두를 수령하실 수 있습니다.</text>
-          </div>
-          <div className="mb-[16px]">
-            <text>판매단위</text> <text>1봉</text>
-          </div>
-          <div className="mb-[16px]">
-            <text>안내사항</text> <text>[비브레이브] 블렌드 원두 (프루티봉봉) 500g (NEW!) - 2023년 7월 15일 23시 주문 건까지, 제조일자 2023년 6월 30일 상품 출고 원두는 어느정도 가스가 배출되고 난 후 향미가 더욱 선명해집니다. 원두 패키지를 열고 닫았다를 반복하게 되면 공기 중의 산소가 맛과 향을 해치는 요소가 되기도 하오니, 서늘하고 건조한 곳에 홀빈 상태로 밀봉하여 보관해주시고 개봉 후에는 가급적 빠른 시일내에 섭취하시기를 권장 드립니다.</text>
-          </div>
+         
         </div>
       </div>
         
