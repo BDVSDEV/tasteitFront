@@ -2,7 +2,7 @@ import Head from "@modules/common/components/head";
 import FeaturedProducts from "@modules/home/components/featured-products";
 import Hero from "@modules/home/components/hero";
 import Layout from "@modules/layout/templates";
-import { ReactElement, useEffect } from "react";
+import { ReactElement } from "react";
 import Nav from "@modules/layout/templates/nav";
 import Image from "next/image";
 import downbtn from "../../public/downbtn.png";
@@ -14,17 +14,14 @@ import dibsoff from "../../public/dibsoff.svg";
 import dibson from "../../public/dibson.svg";
 import router from "next/router";
 
-const Coffee = () => {
-
+const Products = () => {
   return (
     <>
-    { }
       <Nav />
       <Head
         title="Coffee"
         description="Shop all available models only at the Tasteit. Worldwide Shipping. Secure Payment."
       />
-    
       <div className="h-[46px] w-100% flex flex-row items-center justify-between whitespace-nowrap overflow-auto no-scrollbar">
         {/* api 만들어지면 공통컴포넌트 적용 예정 현재 목업*/}
         <div className="w-[46px] h-[33px] ml-[20px] bg-black rounded-full text-center ">
@@ -53,133 +50,39 @@ const Coffee = () => {
         <Image src={downbtn} alt="downbtn" className="mx-1 mt-1"></Image>
         <Image src={group} alt="group" className="mx-2 mt-1"></Image>
       </div>
-    <div className=" flex justify-center items-center ">
-      <div className=" mt-6 mx-15 ">
+      <div>
+      <div className="flex mt-6 mx-15 flex-wrap justify-evenly">
          {/* api 만들어지면 map 으로 교체 예정  + 클릭 시 추가 데이터 받아오기 작업 추가 현재 목업*/}
-      <div className="flex flex-row">
-        <div onClick={() => router.push('/coffeeDetail')} className="mb-[15px] mr-[10px]">
-            <div className="relative">
-              <Image src={test} alt="downbtn" width={152} height={152}></Image>
-              <Image src={dibsoff} alt="dibsoff" className="absolute mx-0 right-1 bottom-[-10px] " />
-            </div>
-
-        
-            <div className="mt-2 w-[152px]">
-              <div>
-                <text className="text-xs">[비브레이브]</text>
-              </div>
-            </div>
-            <text className="text-sm font-normal">빵튀케냐케냐AA 띠리꾸</text>
-            <div>
-              {" "}
-              <text className="text-xs font-semibold">13,000 </text>{" "}
-              <text className="text-xs">원</text>
-            </div>
-          </div>
-
-          <div className="flex flex-col ml-[10px]">
-            <div className="relative">
-              <Image src={test2} alt="downbtn" width={152} height={152}></Image>
-              <Image
-                src={dibson}
-                alt="dibson"
-                className="absolute mx-0 right-1 bottom-[-10px] "
-              />
-            </div>
-            <div className="mt-2 w-[152px]">
-              <div>
-                <text className="text-xs">[비브레이브]</text>
-              </div>
-              <div className="mt-1.5"></div>
-            </div>
-            <text className="text-sm font-normal">빵튀케냐케냐AA 띠리꾸</text>
-            <div>
-              {" "}
-              <text className="text-xs font-semibold">13,000 </text>{" "}
-              <text className="text-xs">원</text>
-            </div>
-          </div>
-      </div>
-      <div className="flex flex-row">
-      <div className="mb-[15px] mr-[10px]">
-          <div className="relative">
-            <Image src={test3} alt="downbtn" width={152} height={152}></Image>
-            <Image
-              src={dibsoff}
-              alt="dibsoff"
-              className="absolute mx-0 right-1 bottom-[-10px] "
-            />
-          </div>
-          <div className="mt-2 w-[152px]">
-            <div>
-              <text className="text-xs">[비브레이브]</text>
-            </div>
-            <div className="mt-1.5"></div>
-          </div>
-          <text className="text-sm font-normal">빵튀케냐케냐AA 띠리꾸</text>
-          <div>
-            <text className="text-xs font-semibold">13,000 </text>
-            <text className="text-xs">원</text>
-          </div>
-        </div>
-
-        <div className="ml-[10px]">
+         <div onClick={() => router.push('/coffeeDetail')} className="mb-[15px]">
           <div className="relative">
             <Image src={test} alt="downbtn" width={152} height={152}></Image>
-            <Image
-              src={dibsoff}
-              alt="dibsoff"
-              className="absolute mx-0 right-1 bottom-[-10px] "
-            />
+            <Image src={dibsoff} alt="dibsoff" className="absolute mx-0 right-1 bottom-[-10px] " />
           </div>
-          <div className="mt-2 flex w-[152px]">
+
+
+          <div className="mt-2 flex w-152 justify-between ">
             <div>
               <text className="text-xs">[비브레이브]</text>
             </div>
-            <div className="mt-1.5"></div>
           </div>
           <text className="text-sm font-normal">빵튀케냐케냐AA 띠리꾸</text>
           <div>
-            <text className="text-xs font-semibold">13,000 </text>
+            {" "}
+            <text className="text-xs font-semibold">13,000 </text>{" "}
             <text className="text-xs">원</text>
           </div>
         </div>
-
-      </div>
-        
-      <div className="flex flex-row ">
-        <div className="mb-[15px] mr-[10px]">
-            <div className="relative">
-              <Image src={test2} alt="downbtn" width={152} height={152}></Image>
-              <Image
-                src={dibsoff}
-                alt="dibsoff"
-                className="absolute mx-0 right-1 bottom-[-10px] "
-              />
-            </div>
-            <div className="mt-2 flex w-[152px]">
-              <div>
-                <text className="text-xs">[비브레이브]</text>
-              </div>
-              <div className="mt-1.5"></div>
-            </div>
-            <text className="text-sm font-normal">빵튀케냐케냐AA 띠리꾸</text>
-            <div>
-              <text className="text-xs font-semibold">13,000 </text>
-              <text className="text-xs">원</text>
-            </div>
-          </div>
 
         <div>
-          <div className="relative ml-[10px]">
-            <Image src={test3} alt="downbtn" width={152} height={152}></Image>
+          <div className="relative">
+            <Image src={test2} alt="downbtn" width={152} height={152}></Image>
             <Image
-              src={dibsoff}
-              alt="dibsoff"
+              src={dibson}
+              alt="dibson"
               className="absolute mx-0 right-1 bottom-[-10px] "
             />
           </div>
-          <div className="mt-2 flex w-[152px]">
+          <div className="mt-2 flex w-[152px] justify-between ">
             <div>
               <text className="text-xs">[비브레이브]</text>
             </div>
@@ -187,25 +90,22 @@ const Coffee = () => {
           </div>
           <text className="text-sm font-normal">빵튀케냐케냐AA 띠리꾸</text>
           <div>
-            <text className="text-xs font-semibold">13,000 </text>
+            {" "}
+            <text className="text-xs font-semibold">13,000 </text>{" "}
             <text className="text-xs">원</text>
           </div>
         </div>
 
-       </div>
-
-       
-       <div className="flex flex-row">
-      <div className="mb-[15px] mr-[10px]">
+        <div className="mb-[15px]">
           <div className="relative">
-            <Image src={test} alt="downbtn" width={152} height={152}></Image>
+            <Image src={test3} alt="downbtn" width={152} height={152}></Image>
             <Image
               src={dibsoff}
               alt="dibsoff"
               className="absolute mx-0 right-1 bottom-[-10px] "
             />
           </div>
-          <div className="mt-2 flex w-[152px]">
+          <div className="mt-2 flex w-[152px] justify-between ">
             <div>
               <text className="text-xs">[비브레이브]</text>
             </div>
@@ -219,7 +119,29 @@ const Coffee = () => {
         </div>
 
         <div>
-          <div className="relative ml-[10px]">
+          <div className="relative">
+            <Image src={test} alt="downbtn" width={152} height={152}></Image>
+            <Image
+              src={dibsoff}
+              alt="dibsoff"
+              className="absolute mx-0 right-1 bottom-[-10px] "
+            />
+          </div>
+          <div className="mt-2 flex w-[152px] justify-between ">
+            <div>
+              <text className="text-xs">[비브레이브]</text>
+            </div>
+            <div className="mt-1.5"></div>
+          </div>
+          <text className="text-sm font-normal">빵튀케냐케냐AA 띠리꾸</text>
+          <div>
+            <text className="text-xs font-semibold">13,000 </text>
+            <text className="text-xs">원</text>
+          </div>
+        </div>
+
+        <div className="mb-[15px]">
+          <div className="relative">
             <Image src={test2} alt="downbtn" width={152} height={152}></Image>
             <Image
               src={dibsoff}
@@ -227,7 +149,7 @@ const Coffee = () => {
               className="absolute mx-0 right-1 bottom-[-10px] "
             />
           </div>
-          <div className="mt-2 flex w-[152px]">
+          <div className="mt-2 flex w-[152px] justify-between ">
             <div>
               <text className="text-xs">[비브레이브]</text>
             </div>
@@ -240,8 +162,71 @@ const Coffee = () => {
           </div>
         </div>
 
-      </div>
-       
+        <div>
+          <div className="relative">
+            <Image src={test3} alt="downbtn" width={152} height={152}></Image>
+            <Image
+              src={dibsoff}
+              alt="dibsoff"
+              className="absolute mx-0 right-1 bottom-[-10px] "
+            />
+          </div>
+          <div className="mt-2 flex w-[152px] justify-between ">
+            <div>
+              <text className="text-xs">[비브레이브]</text>
+            </div>
+            <div className="mt-1.5"></div>
+          </div>
+          <text className="text-sm font-normal">빵튀케냐케냐AA 띠리꾸</text>
+          <div>
+            <text className="text-xs font-semibold">13,000 </text>
+            <text className="text-xs">원</text>
+          </div>
+        </div>
+
+        <div className="mb-[15px]">
+          <div className="relative">
+            <Image src={test} alt="downbtn" width={152} height={152}></Image>
+            <Image
+              src={dibsoff}
+              alt="dibsoff"
+              className="absolute mx-0 right-1 bottom-[-10px] "
+            />
+          </div>
+          <div className="mt-2 flex w-[152px] justify-between ">
+            <div>
+              <text className="text-xs">[비브레이브]</text>
+            </div>
+            <div className="mt-1.5"></div>
+          </div>
+          <text className="text-sm font-normal">빵튀케냐케냐AA 띠리꾸</text>
+          <div>
+            <text className="text-xs font-semibold">13,000 </text>
+            <text className="text-xs">원</text>
+          </div>
+        </div>
+
+        <div>
+          <div className="relative">
+            <Image src={test2} alt="downbtn" width={152} height={152}></Image>
+            <Image
+              src={dibsoff}
+              alt="dibsoff"
+              className="absolute mx-0 right-1 bottom-[-10px] "
+            />
+          </div>
+          <div className="mt-2 flex w-[152px] justify-between ">
+            <div>
+              <text className="text-xs">[비브레이브]</text>
+            </div>
+            <div className="mt-1.5"></div>
+          </div>
+          <text className="text-sm font-normal">빵튀케냐케냐AA 띠리꾸</text>
+          <div>
+            <text className="text-xs font-semibold">13,000 </text>
+            <text className="text-xs">원</text>
+          </div>
+        </div>
       </div>
       </div>
       <div className="flex justify-center items-center mt-5 mb-40 w-100% ">
@@ -253,4 +238,4 @@ const Coffee = () => {
   );
 };
 
-export default Coffee;
+export default Products;
