@@ -14,14 +14,14 @@ import dibsoff from "../../public/dibsoff.svg";
 import dibson from "../../public/dibson.svg";
 import router from "next/router";
 
-const Coffee = () => {
+const Products = () => {
 
   return (
     <>
     { }
       <Nav />
       <Head
-        title="Coffee"
+        title="Products"
         description="Shop all available models only at the Tasteit. Worldwide Shipping. Secure Payment."
       />
     
@@ -57,7 +57,7 @@ const Coffee = () => {
       <div className=" mt-6 mx-15 ">
          {/* api 만들어지면 map 으로 교체 예정  + 클릭 시 추가 데이터 받아오기 작업 추가 현재 목업*/}
       <div className="flex flex-row">
-        <div onClick={() => router.push('/coffeeDetail')} className="mb-[15px] mr-[10px]">
+        <div onClick={() => router.push('/CoffeeDetail')} className="mb-[15px] mr-[10px]">
             <div className="relative">
               <Image src={test} alt="downbtn" width={152} height={152}></Image>
               <Image src={dibsoff} alt="dibsoff" className="absolute mx-0 right-1 bottom-[-10px] " />
@@ -253,4 +253,4 @@ const Coffee = () => {
   );
 };
 
-export default Coffee;
+export default Products;

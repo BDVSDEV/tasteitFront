@@ -120,7 +120,7 @@ const Beans = () => {
       </div>
       <div className="flex items-center justify-center py-4">
         <button className="w-[320px] h-[44px] rounded-md border border-gray-300 bg-white flex justify-center my-3 ">
-          <Link href={"/coffee"}>
+          <Link href={"/products"}>
             {" "}
             <div className="font-semibold text-gray-700 my-2.5 flex flex-row text-[14px] ">
               보러가기
