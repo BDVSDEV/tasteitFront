@@ -61,15 +61,15 @@ const Products = () => {
         <Image src={group} alt="group" className="mx-2 mt-1"></Image>
       </div>
 
-      <ul className="grid grid-cols-2 small:grid-cols-4 gap-x-4 gap-y-8">
+      <ul className="grid grid-cols-2 small:grid-cols-4 gap-x-4 gap-y-8 mx-4 ">
           {data
             ? data.map((product) => (
                 <li key={product.id}>
                   <ProductPreview {...product} />
                 </li>
               ))
-            : Array.from(Array(4).keys()).map((i) => (
-                <li key={i}>
+            : Array.from(Array(10).keys()).map((i) => (
+                <li key={i} >
                   <SkeletonProductPreview />
                 </li>
               ))}
