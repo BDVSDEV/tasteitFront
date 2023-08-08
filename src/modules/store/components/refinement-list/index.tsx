@@ -50,20 +50,21 @@ const RefinementList = ({
           <ul className="text-base-regular flex items-center gap-x-4 small:grid small:grid-cols-1 small:gap-y-2">
             {collections?.map((c) => (
               <li key={c.id} className="items-center mx-2">
-                 <label 
-                  className={`flex items-center justify-center w-[130%] h-[33px] rounded-full text-center ${refinementList.collection_id?.includes(c.id) ? 'bg-[#000] text-white' :  'bg-zinc-100 text-light'}`}
-                >
-                  <input
-                    type="checkbox"
-                    defaultChecked={refinementList.collection_id?.includes(
-                      c.id
-                    )}
-                    onChange={(e) => handleCollectionChange(e, c.id)}
-                    className="accent-[#000] mx-1 hidden"
-                  />
-                  {c.title}
-                </label>
-              </li>
+              <label 
+                className={`flex items-center justify-center min-w-[50px] w-[130%] h-[33px] rounded-full text-center ${refinementList.collection_id?.includes(c.id) ? 'bg-[#000] text-white' :  'bg-zinc-100 text-light'}`}
+              >
+                <input
+                  type="checkbox"
+                  defaultChecked={refinementList.collection_id?.includes(
+                    c.id
+                  )}
+                  onChange={(e) => handleCollectionChange(e, c.id)}
+                  className="accent-[#000] mx-1 hidden"
+                />
+                {c.title}
+              </label>
+            </li>
+            
             ))}
           </ul>
         </div>
