@@ -6,7 +6,6 @@ type RefinementListProps = {
   refinementList: StoreGetProductsParams
   setRefinementList: (refinementList: StoreGetProductsParams) => void
 }
-
 const RefinementList = ({
   refinementList,
   setRefinementList,
@@ -45,21 +44,22 @@ const RefinementList = ({
   }
 
   return (
-    <div>
-      <div className="px-8 py-4  small:pr-0 small:pl-8 small:min-w-[250px]">
+    <div className="h-[46px] w-100% flex flex-row items-center justify-between whitespace-nowrap overflow-auto no-scrollbar">
+      <div className="px-8 small:pr-0 small:pl-8 small:min-w-[250px]">
         <div className="flex gap-x-3 small:flex-col small:gap-y-3">
-          <span className="text-base-semi">Collections</span>
           <ul className="text-base-regular flex items-center gap-x-4 small:grid small:grid-cols-1 small:gap-y-2">
             {collections?.map((c) => (
-              <li key={c.id}>
-                <label className="flex items-center gap-x-2">
+              <li key={c.id} className="items-center mx-2">
+                 <label 
+                  className={`flex items-center justify-center w-[130%] h-[33px] rounded-full text-center ${refinementList.collection_id?.includes(c.id) ? 'bg-[#000] text-white' :  'bg-zinc-100 text-light'}`}
+                >
                   <input
                     type="checkbox"
                     defaultChecked={refinementList.collection_id?.includes(
                       c.id
                     )}
                     onChange={(e) => handleCollectionChange(e, c.id)}
-                    className="accent-amber-200"
+                    className="accent-[#000] mx-1 hidden"
                   />
                   {c.title}
                 </label>
