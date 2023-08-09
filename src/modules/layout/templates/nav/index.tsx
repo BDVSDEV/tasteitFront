@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-// Custom hook
+
 // Custom hook
 function useNavigationLink(path:string, label:string) {
   const { pathname } = useRouter();
@@ -74,15 +74,13 @@ const Nav = () => {
 
   // Use the custom hook for each navigation link
   const homeLink = useNavigationLink('/', '홈');
-  const coffeeLink = useNavigationLink('/store', '커피');
+  const storeLink = useNavigationLink('/store', '커피');
   const roasteryLink = useNavigationLink('/roastery', '로스터리');
   const contentsLink = useNavigationLink('/contents', '컨텐츠');
 
   return (
     <div
-      className={clsx("top-0 inset-x-0 z-50 group w-[100vw]", {
-        "": isHome,
-      })}
+  
     >
       <header
         className={clsx(
@@ -110,7 +108,7 @@ const Nav = () => {
       </header>
       <div className="flex justify-center mt-[12px] h-[34px] text-center text-[#999] text-[14px] font-semibold leading-normal">
         {homeLink}
-        {coffeeLink}
+        {storeLink}
         {roasteryLink}
         {contentsLink}
       </div>
