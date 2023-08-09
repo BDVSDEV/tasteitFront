@@ -9,6 +9,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+        <title>Tasteit</title>
           <link rel="preconnect" href={`//${hostname}`} crossOrigin="true" />
           <link rel="dns-prefetch" href={`//${hostname}`} />
           <link
@@ -16,7 +17,6 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <title>Tasteit</title>
         <body>
           <Main />
           <NextScript />

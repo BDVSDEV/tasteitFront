@@ -11,7 +11,13 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
-const Roastery = () => {
+import { StoreGetProductsParams } from "@medusajs/medusa"
+import Layout from "@modules/layout/templates"
+import RefinementList from "@modules/store/components/refinement-list"
+import { NextPageWithLayout } from "types/global"
+
+const Roastery: NextPageWithLayout = () => {
+  const [params, setParams] = useState<StoreGetProductsParams>({})
   // Define state for currently selected option
   const [selectedOption, setSelectedOption] = useState("서울");
   const [selectedOption2, setSelectedOption2] = useState("찜 많은 순");
@@ -26,10 +32,9 @@ const Roastery = () => {
   };
   return (
     <>
-      <Nav />
-      <Head title="Roastery" description="Roastery page." />
-      <div>
-        <div>
+     <Head title="Roastery" description="Discover our coffee origins and roastery locations." />
+      <div className="flex flex-col small:flex-row small:items-start">
+        <div className="flex-grow p-4">
           <div className="flex h-[46px] justify-between items-center mx-[20px] text-black text-right text-[14px] font-normal leading-normal">
             <div>
               <Menu as="div" className="relative inline-block text-left">
@@ -358,5 +363,6 @@ const Roastery = () => {
     </>
   );
 };
+Roastery.getLayout = (page) => <Layout>{page}</Layout>
 
 export default Roastery;
