@@ -120,3 +120,81 @@ export const useFeaturedProductsQuery = () => {
 
   return queryResults
 }
+
+
+
+const fetchProductsByCollection = async (
+  collectionId: string,
+  cartId: string,
+  region: Region
+): Promise<ProductPreviewType[]> => {
+  const products = await medusaClient.products
+    .list({
+      collection_id: [collectionId],
+      is_giftcard: false,
+      limit: 6,  // or remove the limit if you want all products
+      cart_id: cartId,
+    })
+    .then(({ products }) => products)
+    .catch((_) => [] as PricedProduct[])
+
+  return products
+    .filter((p) => !!p.variants)
+    .map((p) => {
+      const variants = p.variants as unknown as CalculatedVariant[]
+
+      const cheapestVariant = variants.reduce((acc, curr) => {
+        if (acc.calculated_price > curr.calculated_price) {
+          return curr
+        }
+        return acc
+      }, variants[0])
+
+      return {
+        id: p.id!,
+        title: p.title!,
+        handle: p.handle!,
+        thumbnail: p.thumbnail!,
+        price: cheapestVariant
+          ? {
+              calculated_price: formatAmount({
+                amount: cheapestVariant.calculated_price,
+                region: region,
+                includeTaxes: false,
+              }),
+              original_price: formatAmount({
+                amount: cheapestVariant.original_price,
+                region: region,
+                includeTaxes: false,
+              }),
+              difference: getPercentageDiff(
+                cheapestVariant.original_price,
+                cheapestVariant.calculated_price
+              ),
+              price_type: cheapestVariant.calculated_price_type,
+            }
+          : {
+              calculated_price: "N/A",
+              original_price: "N/A",
+              difference: "N/A",
+              price_type: "default",
+            },
+      }
+    })
+}
+
+export const useCollectionProductsQuery = (collectionId: string) => {
+  const { cart } = useCart()
+
+  const queryResults = useQuery(
+    ["collection_products", collectionId, cart?.id, cart?.region],
+    () => fetchProductsByCollection(collectionId, cart?.id!, cart?.region!),
+    {
+      enabled: !!collectionId && !!cart?.id && !!cart?.region,
+      staleTime: Infinity,
+      refetchOnWindowFocus: false,
+    }
+  )
+
+  return queryResults
+}

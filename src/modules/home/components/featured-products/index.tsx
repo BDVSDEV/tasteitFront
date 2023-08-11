@@ -34,12 +34,12 @@ const FeaturedProducts = () => {
                           {product.title || "Product Name"}
                         </p>
                         <p className="text-[#666] font-[Noto Sans] text-[12px] font-normal leading-normal tracking-tighter">
-                          tags
+                          {product.price?.original_price}
                         </p>
                       </div>
 
                       <div className="ml-auto">
-                        <Link href={"/products/" + product.id}>
+                        <Link href={`/products/${product.handle}`}>
                           <img src="/arrow_right.svg" alt="" />
                         </Link>
                       </div>
