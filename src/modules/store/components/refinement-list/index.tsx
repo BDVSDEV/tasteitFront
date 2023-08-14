@@ -39,8 +39,10 @@ const RefinementList = ({
     return
   }
 
-  const firstRowCollections = collections?.slice(0, 5)
+  const firstRowCollections = collections?.slice(0, 5)  
   const secondRowCollections = collections?.slice(5, 10)
+// Will modify the code if there are changes
+  
 
   return (
     <div className="w-100% flex flex-col items-center justify-between whitespace-nowrap no-scrollbar p-2">
@@ -53,6 +55,7 @@ const RefinementList = ({
                   <label 
                     className={`flex items-center justify-center px-3 h-[31px] rounded-3xl text-center ${refinementList.collection_id?.includes(c.id) ? 'bg-[#000] text-white' :  'bg-zinc-100 text-light'}`}
                   >
+                    {/* hide checkbox, but keep the click function */}
                     <input
                       type="checkbox"
                       defaultChecked={refinementList.collection_id?.includes(c.id)}
