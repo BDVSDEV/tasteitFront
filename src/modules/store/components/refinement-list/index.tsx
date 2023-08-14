@@ -6,6 +6,7 @@ type RefinementListProps = {
   refinementList: StoreGetProductsParams
   setRefinementList: (refinementList: StoreGetProductsParams) => void
 }
+
 const RefinementList = ({
   refinementList,
   setRefinementList,
@@ -17,9 +18,7 @@ const RefinementList = ({
     id: string
   ) => {
     const { checked } = e.target
-
     const collectionIds = refinementList.collection_id || []
-
     const exists = collectionIds.includes(id)
 
     if (checked && !exists) {
@@ -27,7 +26,6 @@ const RefinementList = ({
         ...refinementList,
         collection_id: [...collectionIds, id],
       })
-
       return
     }
 
@@ -36,39 +34,39 @@ const RefinementList = ({
         ...refinementList,
         collection_id: collectionIds.filter((c) => c !== id),
       })
-
       return
     }
-
     return
   }
 
+  const firstRowCollections = collections?.slice(0, 5)
+  const secondRowCollections = collections?.slice(5, 10)
+
   return (
-    <div className="h-[46px] w-100% flex flex-row items-center justify-between whitespace-nowrap overflow-auto no-scrollbar">
-      <div className="px-8 small:pr-0 small:pl-8 small:min-w-[250px]">
-        <div className="flex gap-x-3 small:flex-col small:gap-y-3">
-          <ul className="text-base-regular flex items-center gap-x-4 small:grid small:grid-cols-1 small:gap-y-2">
-            {collections?.map((c) => (
-              <li key={c.id} className="items-center mx-2">
-              <label 
-                className={`flex items-center justify-center min-w-[50px] w-[130%] h-[33px] rounded-full text-center ${refinementList.collection_id?.includes(c.id) ? 'bg-[#000] text-white' :  'bg-zinc-100 text-light'}`}
-              >
-                <input
-                  type="checkbox"
-                  defaultChecked={refinementList.collection_id?.includes(
-                    c.id
-                  )}
-                  onChange={(e) => handleCollectionChange(e, c.id)}
-                  className="accent-[#000] mx-1 hidden"
-                />
-                {c.title}
-              </label>
-            </li>
-            
-            ))}
-          </ul>
+    <div className="w-100% flex flex-col items-center justify-between whitespace-nowrap no-scrollbar p-2">
+      {[firstRowCollections, secondRowCollections].map((rowCollections, rowIndex) => (
+        <div key={rowIndex} className="w-full px-2 overflow-auto h-[auto] no-scrollbar mb-2">
+          <div className="flex gap-x-3">
+            <ul className="text-base-regular flex items-center justify-between gap-x-1 small:grid small:grid-cols-1 small:gap-y-2">
+              {rowCollections?.map((c) => (
+                <li key={c.id} className="items-center gap-2 mx-1">
+                  <label 
+                    className={`flex items-center justify-center px-3 h-[31px] rounded-3xl text-center ${refinementList.collection_id?.includes(c.id) ? 'bg-[#000] text-white' :  'bg-zinc-100 text-light'}`}
+                  >
+                    <input
+                      type="checkbox"
+                      defaultChecked={refinementList.collection_id?.includes(c.id)}
+                      onChange={(e) => handleCollectionChange(e, c.id)}
+                      className="accent-[#000] mx-1 hidden"
+                    />
+                    {c.title}
+                  </label>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   )
 }
