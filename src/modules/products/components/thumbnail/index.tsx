@@ -14,6 +14,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
   thumbnail,
   images,
   size = "small",
+  
 }) => {
   const initialImage = thumbnail || images?.[0]?.url
 
@@ -39,13 +40,14 @@ const ImageOrPlaceholder = ({
     <Image
       src={image}
       alt="Thumbnail"
-      className="absolute inset-0"
+      className="absolute inset-0 "
       draggable={false}
       fill
       sizes="100vw"
       style={{
         objectFit: "cover",
         objectPosition: "center",
+        borderRadius: "8px"
       }}
     />
   ) : (
