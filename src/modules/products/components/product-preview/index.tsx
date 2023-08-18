@@ -56,7 +56,7 @@ const ProductPreview = ({
     <div className="relative ">
       <Thumbnail thumbnail={thumbnail} size="full" />
       <div className="absolute bottom-[-20px] right-2 cursor-pointer" onClick={onIconClick}>
-        <img  src={iconActive ? "icon_tounge_a.svg" : "icon_tounge_n.svg"} alt="Clickable Icon" />
+        <img  src={iconActive ? "/icon_tounge_a.svg" : "/icon_tounge_n.svg"} alt="Clickable Icon" />
       </div>
     </div>
   );
