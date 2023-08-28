@@ -158,7 +158,7 @@ const Roastery: NextPageWithLayout = () => {
                                 className={classNames(
                                   active
                                     ? "bg-gray-100 text-gray-900"
-                                    : "text-gray-4400",
+                                    : "text-gray-400",
                                   "block px-[15px] py-2 text-sm"
                                 )}
                               >

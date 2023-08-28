@@ -11,6 +11,8 @@ import { useRouter } from "next/router"
 import { ParsedUrlQuery } from "querystring"
 import { ReactElement } from "react"
 import { NextPageWithLayout, PrefetchedPageProps } from "types/global"
+import DetailNav from "@modules/layout/templates/detail-nav/detailNav"
+
 
 interface Params extends ParsedUrlQuery {
   handle: string
@@ -22,7 +24,10 @@ const fetchProduct = async (handle: string) => {
     .then(({ products }) => products[0])
 }
 
+
+// TODO: check and fix the error on line 28
 const ProductPage: NextPageWithLayout<PrefetchedPageProps> = ({ notFound }) => {
+
   const { query, isFallback, replace } = useRouter()
   const handle = typeof query.handle === "string" ? query.handle : ""
 
@@ -54,6 +59,8 @@ const ProductPage: NextPageWithLayout<PrefetchedPageProps> = ({ notFound }) => {
   if (isSuccess) {
     return (
       <>
+  <DetailNav />
+
         <Head
           description={data.description}
           title={data.title}
@@ -67,9 +74,9 @@ const ProductPage: NextPageWithLayout<PrefetchedPageProps> = ({ notFound }) => {
   return <></>
 }
 
-ProductPage.getLayout = (page: ReactElement) => {
-  return <Layout>{page}</Layout>
-}
+// ProductPage.getLayout = (page: ReactElement) => {
+//   return  <Layout>{page}</Layout>
+// } TODO: find anther solution for removing the navbar
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const handles = await getProductHandles()
