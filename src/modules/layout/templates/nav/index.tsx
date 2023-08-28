@@ -48,28 +48,56 @@ const Nav = () => {
   const [isHome, setIsHome] = useState(false);
   const [isScrolled, setIsScrolled] = useState(true);
 
+  // useEffect(() => {
+  //   if (isHome) {
+  //     const detectScrollY = () => {
+  //       if (window.scrollY > 0) {
+  //         setIsScrolled(true);
+  //       } else {
+  //         setIsScrolled(true);
+  //       }
+  //     };
+
+  //     window.addEventListener("scroll", detectScrollY);
+
+  //     return () => {
+  //       window.removeEventListener("scroll", detectScrollY);
+  //     };
+  //   }
+  // }, [isHome]);
+
+  // useEffect(() => {
+  //   pathname === "/" ? setIsHome(true) : setIsHome(false);
+  // }, [pathname]);
+
+
+
+  
+  // navbar disappears
+
   useEffect(() => {
-    if (isHome) {
-      const detectScrollY = () => {
-        if (window.scrollY > 0) {
-          setIsScrolled(true);
-        } else {
-          setIsScrolled(true);
-        }
-      };
+    const handleScroll = () => {
+      const scrollTop =
+        window.scrollY || document.documentElement.scrollTop;
+      const navbar = document.getElementById("navbar");
 
-      window.addEventListener("scroll", detectScrollY);
+      if (scrollTop > lastScrollTop) {
+        navbar!.style.top = "-100px";
+      } else {
+        navbar!.style.top = "0";
+      }
 
-      return () => {
-        window.removeEventListener("scroll", detectScrollY);
-      };
-    }
-  }, [isHome]);
+      lastScrollTop = scrollTop;
+    };
 
-  useEffect(() => {
-    pathname === "/" ? setIsHome(true) : setIsHome(false);
-  }, [pathname]);
+    let lastScrollTop = 0;
+    window.addEventListener("scroll", handleScroll);
 
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  
   const { toggle } = useMobileMenu();
 
   // Use the custom hook for each navigation link
@@ -79,7 +107,7 @@ const Nav = () => {
   const contentsLink = useNavigationLink('/contents', '컨텐츠');
 
   return (
-    <div
+    <div id="navbar"
   
     >
       <header
@@ -90,7 +118,7 @@ const Nav = () => {
           }
         )}
       >
-        <nav
+        <nav 
           className={clsx(
             "text-gray-900 flex items-center justify-center w-full h-full text-small-regular transition-colors duration-200",
             {
