@@ -8,7 +8,7 @@ const Footer = () => {
       {/* <FooterCTA /> */} 
       {/* TODO: fix */}
       <FooterNav />
-      <MedusaCTA />
+      {/* <MedusaCTA /> */}
     </footer>
   )
 }

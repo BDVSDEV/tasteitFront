@@ -5,7 +5,7 @@ import React from "react"
 const Layout: React.FC = ({ children }) => {
   return (
     <div>
-      <Nav />
+      <Nav/>
       <main className="relative">{children}</main>
       <Footer />
     </div>
