@@ -9,7 +9,8 @@ import search from '../../../../../public/searchIcon.png';
 import basket from '../../../../../public/basketIcon.png';
 import Image from "next/image";
 import router from 'next/router'
-// Custom hook
+
+// TODO: new navbar animation
 // Custom hook
 function useNavigationLink(path:string, label:string) {
   const { pathname } = useRouter();
@@ -18,21 +19,24 @@ function useNavigationLink(path:string, label:string) {
   return (
     <Link href={path}>
       <div className="relative w-[80px] text-center group">
-        {label}
-        <div 
-          className={clsx(
-            "absolute left-0 bottom-[-13px] h-[4px] bg-black transform transition-all ease-in-out duration-200", 
-            {
-              "w-[80px]": isActive,
-              "w-0": !isActive
-            }
-          )}
+        <span
+          className={clsx("transition-colors duration-200", {
+            "text-black underline": isActive, // Added "underline" class
+            "text-gray-600": !isActive,
+          })}
+        >
+          {label}
+        </span>
+        <div
+          className={clsx("absolute left-0 bottom-[-13px] h-[4px] bg-black transform transition-all ease-in-out duration-200", {
+            "w-[80px]": isActive,
+            "w-0": !isActive,
+          })}
         ></div>
       </div>
     </Link>
   );
 }
-
 
 const DetailNav = () => {
   const { pathname } = useRouter();
@@ -64,16 +68,13 @@ const DetailNav = () => {
   const { toggle } = useMobileMenu();
 
   // Use the custom hook for each navigation link
-  const coffeeInfoLink = useNavigationLink('/caffee/coffeeinfo', '정보');
-  const cuppingtalkLink = useNavigationLink('/caffee/cuppingtalk', '커핑톡');
-  const inquiryLink = useNavigationLink('/caffee/inquiry', '문의');
+  const productDescriptionLink = useNavigationLink('/', '상품설명');
+  const productDetailsLink = useNavigationLink('/product/details', '상세정보');
+  const cuppingTalkLink = useNavigationLink('/product/cuppingtalk', '커핑톡');
+  const inquiryLink = useNavigationLink('/product/inquiry', '문의');
 
   return (
-    <div
-      className={clsx("top-0 inset-x-0 z-50 group", {
-        "": isHome,
-      })}
-    >
+    <div className={clsx("top-0 inset-x-0 z-50 group", { "": isHome })}>
       <header
         className={clsx(
           "relative h-[58px] px-8 mx-auto transition-colors border-b border-transparent duration-200 group-hover:bg-black group-hover:border-black-200",
@@ -92,8 +93,9 @@ const DetailNav = () => {
         </div>
       </header>
       <div className="flex justify-center mt-[12px] h-[34px] text-center text-[#999] text-[14px] font-semibold leading-normal">
-        {coffeeInfoLink}
-        {cuppingtalkLink}
+        {productDescriptionLink}
+        {productDetailsLink}
+        {cuppingTalkLink}
         {inquiryLink}
       </div>
     </div>
