@@ -20,8 +20,9 @@ const OptionSelect: React.FC<OptionSelectProps> = ({
 
   return (
     <div className="flex flex-col gap-y-3">
-      <span className="text-base-semi">Select {title}</span>
-      <div className="grid grid-cols-3 lg:grid-cols-6 gap-2">
+      {/* TODO: discuss  */}
+      {/* <span className="text-base-semi">Select {title}</span>   */}
+      <div className="grid grid-cols-4 lg:grid-cols-6 gap-2">
         {filteredOptions.map((v) => {
           return (
             <button

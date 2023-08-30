@@ -49,6 +49,7 @@ export type AppPropsWithLayout<P = {}, IP = P> = AppProps<P> & {
 }
 
 export type ProductPreviewType = {
+  skeleton: any
   id: string
   title: string
   handle: string | null
