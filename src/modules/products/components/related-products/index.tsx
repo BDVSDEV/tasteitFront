@@ -1,85 +1,79 @@
-import { fetchProductsList } from "@lib/data"
-import usePreviews from "@lib/hooks/use-previews"
-import getNumberOfSkeletons from "@lib/util/get-number-of-skeletons"
-import repeat from "@lib/util/repeat"
-import { Product, StoreGetProductsParams } from "@medusajs/medusa"
-import Button from "@modules/common/components/button"
-import SkeletonProductPreview from "@modules/skeletons/components/skeleton-product-preview"
-import { useCart } from "medusa-react"
-import { useMemo } from "react"
-import { useInfiniteQuery } from "@tanstack/react-query"
-import ProductPreview from "../product-preview"
-import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
+import React, { useRef } from "react";
+import { fetchProductsList } from "@lib/data";
+import usePreviews from "@lib/hooks/use-previews";
+import { StoreGetProductsParams } from "@medusajs/medusa";
+import Button from "@modules/common/components/button";
+import SkeletonProductPreview from "@modules/skeletons/components/skeleton-product-preview";
+import { useCart } from "medusa-react";
+import { useMemo } from "react";
+import { useInfiniteQuery } from "@tanstack/react-query";
+import ProductPreview from "../product-preview";
+import { PricedProduct } from "@medusajs/medusa/dist/types/pricing";
 
 type RelatedProductsProps = {
-  product: PricedProduct
-}
+  product: PricedProduct;
+};
 
 const RelatedProducts = ({ product }: RelatedProductsProps) => {
-  const { cart } = useCart()
+  const { cart } = useCart();
+  const scrollContainerRef = useRef(null);
 
   const queryParams: StoreGetProductsParams = useMemo(() => {
-    const params: StoreGetProductsParams = {}
+    const params: StoreGetProductsParams = {};
 
     if (cart?.id) {
-      params.cart_id = cart.id
+      params.cart_id = cart.id;
     }
 
     if (product.collection_id) {
-      params.collection_id = [product.collection_id]
+      params.collection_id = [product.collection_id];
     }
 
     if (product.tags) {
-      params.tags = product.tags.map((t) => t.value)
+      params.tags = product.tags.map((t) => t.value);
     }
 
-    params.is_giftcard = false
+    params.is_giftcard = false;
 
-    return params
-  }, [product, cart?.id])
+    return params;
+  }, [product, cart?.id]);
 
-  const { data, hasNextPage, fetchNextPage, isLoading, isFetchingNextPage } =
+  const { data, hasNextPage, fetchNextPage, isLoading } =
     useInfiniteQuery(
       [`infinite-products-${product.id}`, queryParams, cart],
       ({ pageParam }) => fetchProductsList({ pageParam, queryParams }),
       {
         getNextPageParam: (lastPage) => lastPage.nextPage,
       }
-    )
+    );
 
-  const previews = usePreviews({ pages: data?.pages, region: cart?.region })
+  const previews = usePreviews({ pages: data?.pages, region: cart?.region });
 
   return (
-    <div className="product-page-constraint">
-      <div className="flex flex-col items-center text-center mb-16">
-        <span className="text-base-regular text-gray-600 mb-6">
+    <div className="product-page-constraint mb-[100px]">
+      <div className="flex flex-col">
+        {/* <span className="text-base-regular text-gray-600 mb-6">
           Related products
-        </span>
-        <p className="text-2xl-regular text-gray-900 max-w-lg">
-          You might also want to check out these products.
+        </span> */}
+        <p className="text-xl-regular text-gray-900 text-[20px]">
+        테이스터들이 함께 찾은 원두
         </p>
       </div>
 
-      <ul className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-x-4 gap-y-8">
+      <div
+        ref={scrollContainerRef}
+        className="overflow-x-auto flex space-x-4 p-4"
+      >
         {previews.map((p) => (
-          <li key={p.id}>
+          <div
+            key={p.id}
+            className="flex-none w-40" // Adjust the width as needed
+          >
             <ProductPreview {...p} />
-          </li>
+          </div>
         ))}
-        {isLoading &&
-          !previews.length &&
-          repeat(8).map((index) => (
-            <li key={index}>
-              <SkeletonProductPreview />
-            </li>
-          ))}
-        {isFetchingNextPage &&
-          repeat(getNumberOfSkeletons(data?.pages)).map((index) => (
-            <li key={index}>
-              <SkeletonProductPreview />
-            </li>
-          ))}
-      </ul>
+      </div>
+
       {hasNextPage && (
         <div className="flex items-center justify-center mt-8">
           <Button
@@ -92,7 +86,7 @@ const RelatedProducts = ({ product }: RelatedProductsProps) => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default RelatedProducts
+export default RelatedProducts;

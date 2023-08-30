@@ -20,7 +20,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({ product }) => {
 
   return (
     <ProductProvider product={product}>
-      <div className="content-container flex flex-col small:flex-row small:items-start py-6 relative">
+      <div className="flex flex-col small:flex-row small:items-start py-6 relative">
         <div className="flex flex-col gap-y-8 w-full">
           <ImageGallery images={(product?.images || [])} />
         </div>
@@ -29,10 +29,12 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({ product }) => {
           ref={info}
         >
           <ProductInfo product={product} />
-          <ProductTabs product={product} />
+          <div style={{color:"red", fontSize:"30px", textAlign:"center"}}>TOAST UI</div>
+          {/* <ProductTabs product={product} /> */}
+          {/* TODO: discuss the productTabs view */}
         </div>
       </div>
-      <div className="content-container my-16 px-6 small:px-8 small:my-32">
+      <div className="content-container px-6 small:px-8 small:my-32">
         <RelatedProducts product={product} />
       </div>
       {/* <MobileActions product={product} show={!inView} /> */}

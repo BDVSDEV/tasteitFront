@@ -1,31 +1,10 @@
-import { useFeaturedProductsQuery } from "@lib/hooks/use-layout-data"
-import UnderlineLink from "@modules/common/components/underline-link"
 import ProductPreview from "@modules/products/components/product-preview"
 import SkeletonProductPreview from "@modules/skeletons/components/skeleton-product-preview"
 import Link from "next/link"
-import Head from "@modules/common/components/head"
-import FeaturedProducts from "@modules/home/components/featured-products"
-import Hero from "@modules/home/components/hero"
-import Layout from "@modules/layout/templates"
-import { ReactElement, useRef } from "react"
-import Nav from "@modules/layout/templates/nav"
-import Image from "next/image"
-import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
-import { useProducts } from "medusa-react"
- 
-import downbtn from "../../public/downbtn.png"
-import group from "../../public/group.png"
-import test from "../../public/test.png"
-import test2 from "../../public/test2.png"
-import test3 from "../../public/test3.png"
-import dibsoff from "../../public/dibsoff.svg"
-import dibson from "../../public/dibson.svg"
-import { useCollections } from "medusa-react"
 import { useCollectionProductsQuery } from "@lib/hooks/use-layout-data"
 
 const Beans = () => {
-  const collectionId = "pcol_01H6ZK9S26FK9RSP175N2RXNA3"; // Replace this with the actual collection ID
+  const collectionId = "pcol_01H7A1CV1DFF3J1EVT4V75VQRV"; // Replace this with the actual collection ID
   const { data: productsFromCollection } = useCollectionProductsQuery(collectionId);
   
   return (
