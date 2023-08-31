@@ -6,12 +6,15 @@ const heroImages = [
   '/heroc10.jpg',
   '/heroc11.jpg',
   '/heroc12.png',
-]; // Add the paths to your hero images
+]; 
+
+const SWIPE_THRESHOLD = 50; // easier to trigger slide changes with swipes
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [dragging, setDragging] = useState(false);
-  const sliderRef = useRef<HTMLDivElement | null>(null); // Define the type for the ref
+  const [dragStartX, setDragStartX] = useState(0);
+  const sliderRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,7 +23,7 @@ const Hero = () => {
           (prevIndex + 1) % heroImages.length
         );
       }
-    }, 5000); // set the sliding time to 5 sec
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [dragging]);
@@ -29,11 +32,10 @@ const Hero = () => {
     setCurrentImageIndex(index);
   };
 
-
-  // made the slides draggable
-  const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => { 
+  const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
     e.preventDefault();
     setDragging(true);
+    setDragStartX('touches' in e ? e.touches[0].clientX : e.clientX);
   };
 
   const handleDragEnd = () => {
@@ -42,17 +44,19 @@ const Hero = () => {
 
   const handleDrag = (e: React.MouseEvent | React.TouchEvent) => {
     if (!sliderRef.current) {
-      return; // Exit early if ref is null
+      return;
     }
-  // added the functionality so that the slide will go back to the first image after the user swipes to the last slide
+
     if (dragging) {
-      const sliderWidth = sliderRef.current.offsetWidth;
-      const clientX = ('touches' in e) ? e.touches[0].clientX : e.clientX;
-      const offsetX = clientX - sliderRef.current.getBoundingClientRect().left;
-      const newIndex = Math.floor((offsetX / sliderWidth) * heroImages.length);
-  
-      if (newIndex >= 0 && newIndex < heroImages.length) {
+      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+      const dragDistance = clientX - dragStartX;
+
+      if (Math.abs(dragDistance) >= SWIPE_THRESHOLD) {
+        const direction = dragDistance > 0 ? -1 : 1;
+        const newIndex = (currentImageIndex + direction + heroImages.length) % heroImages.length;
+
         setCurrentImageIndex(newIndex);
+        setDragStartX(clientX); // ensures smoother and more intuitive swipes
       }
     }
   };
