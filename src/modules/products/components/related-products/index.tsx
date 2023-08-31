@@ -61,7 +61,7 @@ const RelatedProducts = ({ product }: RelatedProductsProps) => {
 
       <div
         ref={scrollContainerRef}
-        className="overflow-x-auto flex space-x-4 p-4"
+        className="overflow-x-auto no-scrollbar flex space-x-4 p-4"
       >
         {previews.map((p) => (
           <div
