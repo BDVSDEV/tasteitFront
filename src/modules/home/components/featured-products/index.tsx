@@ -22,6 +22,8 @@ const FeaturedProducts = () => {
             {data
               ?  data.slice(0, 3).map((product) => (
                   <Fragment key={product.id}>
+                        <Link href={`/products/${product.handle}`}>
+
                     <div className="flex flex-row items-center w-[87vw] justify-around">
                       <img
                         src={product.thumbnail || "/default_image_path.png"}
@@ -39,11 +41,10 @@ const FeaturedProducts = () => {
                       </div>
 
                       <div className="ml-auto">
-                        <Link href={`/products/${product.handle}`}>
                           <img src="/arrow_right.svg" alt="" />
-                        </Link>
                       </div>
                     </div>
+                    </Link>
 
                     {/* Line under each product */}
                     <div className="flex justify-end py-6">

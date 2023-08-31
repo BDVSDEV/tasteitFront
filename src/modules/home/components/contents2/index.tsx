@@ -1,29 +1,78 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import UnderlineLink from "@modules/common/components/underline-link"
 import Image from "next/image"
 import Link from "next/link"
 
 const roasteryImages = ["/heroc5.jpeg", "/heroc2.jpeg", "/heroc11.jpg"] // Add the paths to your hero images
+const SWIPE_THRESHOLD = 50 // easier to trigger slide changes with swipes
+
 
 const Contents2 = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  useEffect(() => {
-    const interval = setInterval(() => {
+// swipe
+const [dragging, setDragging] = useState(false)
+const [dragStartX, setDragStartX] = useState(0)
+const sliderRef = useRef<HTMLDivElement | null>(null)
+useEffect(() => {
+  const interval = setInterval(() => {
+    if (!dragging) {
       setCurrentImageIndex(
         (prevIndex) => (prevIndex + 1) % roasteryImages.length
       )
-    }, 5000) // Change the interval time (in milliseconds) to adjust the slide duration
+    }
+  }, 5000)
 
-    return () => clearInterval(interval)
-  }, [])
+  return () => clearInterval(interval)
+}, [dragging])
 
-  const handleDotClick = (index: any) => {
-    setCurrentImageIndex(index)
+const handleDotClick = (index: number) => {
+  setCurrentImageIndex(index)
+}
+
+const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
+  e.preventDefault()
+  setDragging(true)
+  setDragStartX("touches" in e ? e.touches[0].clientX : e.clientX)
+}
+
+const handleDragEnd = () => {
+  setDragging(false)
+}
+
+const handleDrag = (e: React.MouseEvent | React.TouchEvent) => {
+  if (!sliderRef.current) {
+    return
   }
 
+  if (dragging) {
+    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX
+    const dragDistance = clientX - dragStartX
+
+    if (Math.abs(dragDistance) >= SWIPE_THRESHOLD) {
+      const direction = dragDistance > 0 ? -1 : 1
+      const newIndex =
+        (currentImageIndex + direction + roasteryImages.length) %
+        roasteryImages.length
+
+      setCurrentImageIndex(newIndex)
+      setDragStartX(clientX) // ensures smoother and more intuitive swipes
+    }
+  }
+}
+
   return (
-    <div>
+    <div
+    className="cursor-grab"
+    ref={sliderRef}
+    onMouseDown={handleDragStart}
+    onMouseUp={handleDragEnd}
+    onMouseMove={handleDrag}
+    onMouseLeave={handleDragEnd}
+    onTouchStart={handleDragStart}
+    onTouchEnd={handleDragEnd}
+    onTouchMove={handleDrag}
+  >
       <div className=" px-4 mt-12 mb-3 text-black text-[18px] font-semibold leading-normal">
       그냥 신맛이 아니라 감귤 맛
       </div>

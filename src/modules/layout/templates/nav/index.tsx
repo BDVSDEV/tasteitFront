@@ -48,55 +48,55 @@ const Nav = () => {
   const [isHome, setIsHome] = useState(false);
   const [isScrolled, setIsScrolled] = useState(true);
 
-  // useEffect(() => {
-  //   if (isHome) {
-  //     const detectScrollY = () => {
-  //       if (window.scrollY > 0) {
-  //         setIsScrolled(true);
-  //       } else {
-  //         setIsScrolled(true);
-  //       }
-  //     };
+  useEffect(() => {
+    if (isHome) {
+      const detectScrollY = () => {
+        if (window.scrollY > 0) {
+          setIsScrolled(true);
+        } else {
+          setIsScrolled(true);
+        }
+      };
 
-  //     window.addEventListener("scroll", detectScrollY);
+      window.addEventListener("scroll", detectScrollY);
 
-  //     return () => {
-  //       window.removeEventListener("scroll", detectScrollY);
-  //     };
-  //   }
-  // }, [isHome]);
+      return () => {
+        window.removeEventListener("scroll", detectScrollY);
+      };
+    }
+  }, [isHome]);
 
-  // useEffect(() => {
-  //   pathname === "/" ? setIsHome(true) : setIsHome(false);
-  // }, [pathname]);
+  useEffect(() => {
+    pathname === "/" ? setIsHome(true) : setIsHome(false);
+  }, [pathname]);
 
 
 
   
   // navbar disappears
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop =
-        window.scrollY || document.documentElement.scrollTop;
-      const navbar = document.getElementById("navbar");
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollTop =
+  //       window.scrollY || document.documentElement.scrollTop;
+  //     const navbar = document.getElementById("navbar");
 
-      if (scrollTop > lastScrollTop) {
-        navbar!.style.top = "-100px";
-      } else {
-        navbar!.style.top = "0";
-      }
+  //     if (scrollTop > lastScrollTop) {
+  //       navbar!.style.top = "-100px";
+  //     } else {
+  //       navbar!.style.top = "0";
+  //     }
 
-      lastScrollTop = scrollTop;
-    };
+  //     lastScrollTop = scrollTop;
+  //   };
 
-    let lastScrollTop = 0;
-    window.addEventListener("scroll", handleScroll);
+  //   let lastScrollTop = 0;
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
   
   const { toggle } = useMobileMenu();
 
