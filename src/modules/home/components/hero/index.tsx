@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import UnderlineLink from '@modules/common/components/underline-link';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -11,33 +10,64 @@ const heroImages = [
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [dragging, setDragging] = useState(false);
+  const sliderRef = useRef(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) =>
-        (prevIndex + 1) % heroImages.length
-      );
+      if (!dragging) {
+        setCurrentImageIndex((prevIndex) =>
+          (prevIndex + 1) % heroImages.length
+        );
+      }
     }, 5000); // Change the interval time (in milliseconds) to adjust the slide duration
- 
-    return () => clearInterval(interval);
-  }, []);
 
-  const handleDotClick = (index: any) => {
+    return () => clearInterval(interval);
+  }, [dragging]);
+
+  const handleDotClick = (index) => {
     setCurrentImageIndex(index);
   };
 
-  return (
-    <div className="h-[360px] w-360px relative">
-      <div className="text-white absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:text-left small:justify-end small:items-start small:p-32">
-        
-        
-        {/* <Link href="/products"></Link>     */}
-        <Link href="/store"></Link>    
+  const handleDragStart = (e) => {
+    e.preventDefault();
+    setDragging(true);
+  };
 
-        {/* /store */}
+  const handleDragEnd = () => {
+    setDragging(false);
+  };
+
+  const handleDrag = (e) => {
+    if (dragging) {
+      const sliderWidth = sliderRef.current.offsetWidth;
+      const offsetX = e.clientX - sliderRef.current.getBoundingClientRect().left;
+      const newIndex = Math.floor((offsetX / sliderWidth) * heroImages.length);
+
+      if (newIndex >= 0 && newIndex < heroImages.length) {
+        setCurrentImageIndex(newIndex);
+      }
+    }
+  };
+
+  return (
+    <div
+      className="h-[360px] w-360px relative"
+      ref={sliderRef}
+      onMouseDown={handleDragStart}
+      onMouseUp={handleDragEnd}
+      onMouseMove={handleDrag}
+      onMouseLeave={handleDragEnd}
+      onTouchStart={handleDragStart}
+      onTouchEnd={handleDragEnd}
+      onTouchMove={handleDrag}
+    >
+      <div className="text-white absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:text-left small:justify-end small:items-start small:p-32">
+        {/* <Link href="/products"></Link>     */}
+        <Link href="/store"></Link>
         {/* TODO: click logic */}
       </div>
-      
+
       <div className="absolute inset-0">
         {heroImages.map((image, index) => (
           <Image

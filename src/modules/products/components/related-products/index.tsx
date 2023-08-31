@@ -38,14 +38,13 @@ const RelatedProducts = ({ product }: RelatedProductsProps) => {
     return params;
   }, [product, cart?.id]);
 
-  const { data, hasNextPage, fetchNextPage, isLoading } =
-    useInfiniteQuery(
-      [`infinite-products-${product.id}`, queryParams, cart],
-      ({ pageParam }) => fetchProductsList({ pageParam, queryParams }),
-      {
-        getNextPageParam: (lastPage) => lastPage.nextPage,
-      }
-    );
+  const { data, hasNextPage, fetchNextPage, isLoading } = useInfiniteQuery(
+    [`infinite-products-${product.id}`, queryParams, cart],
+    ({ pageParam }) => fetchProductsList({ pageParam, queryParams }),
+    {
+      getNextPageParam: (lastPage) => lastPage.nextPage,
+    }
+  );
 
   const previews = usePreviews({ pages: data?.pages, region: cart?.region });
 
@@ -56,25 +55,25 @@ const RelatedProducts = ({ product }: RelatedProductsProps) => {
           Related products
         </span> */}
         <p className="text-xl-regular text-gray-900 text-[20px]">
-        테이스터들이 함께 찾은 원두
+          테이스터들이 함께 찾은 원두
         </p>
       </div>
 
       <div
         ref={scrollContainerRef}
-        className="overflow-x-auto flex space-x-4 p-4"
+        className="overflow-x-auto no-scrollbar flex space-x-4 p-4"
       >
         {previews.map((p) => (
           <div
             key={p.id}
-            className="flex-none w-40" // Adjust the width as needed
+            className="flex-none w-[208px]" // Adjust the width as needed
           >
             <ProductPreview {...p} />
           </div>
         ))}
       </div>
 
-      {hasNextPage && (
+      {/* {hasNextPage && (
         <div className="flex items-center justify-center mt-8">
           <Button
             isLoading={isLoading}
@@ -84,7 +83,7 @@ const RelatedProducts = ({ product }: RelatedProductsProps) => {
             Load more
           </Button>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
