@@ -1,14 +1,13 @@
 module.exports = {
+  presets: [require("@medusajs/ui-preset")],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
     "./src/modules/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@medusajs/ui/dist/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
-      color: { 
-        'gray-color': '#666666'
-      },
       transitionProperty: {
         "width": "width",
         "spacing": 'margin, padding',
@@ -35,11 +34,13 @@ module.exports = {
           "Helvetica Neue",
           "Ubuntu",
           "sans-serif",
-          "Suite",
+          "SUITE",
           "Poppins",
           "Noto Sans",
+          "Didot",
           
         ],
+        
       },
     },
   },

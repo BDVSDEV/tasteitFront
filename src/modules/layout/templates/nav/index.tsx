@@ -22,7 +22,7 @@ function useNavigationLink(path:string, label:string) {
             "transition-colors duration-200",
             {
               "text-black": isActive,
-              "text-gray-600": !isActive
+              "text-gray-400": !isActive
             }
           )}
         >
